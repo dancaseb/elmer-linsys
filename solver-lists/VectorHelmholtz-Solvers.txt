@@ -10,3 +10,4 @@ linsys/elmer_iter_BiCGStab_none.sif
 linsys/elmer_iter_Idrs5_ILU0.sif
 linsys/elmer_iter_Idrs5_ILU1.sif
 linsys/elmer_iter_Idrs5_none.sif
+linsys/elmer_iter_GCR_PMG_cjacobi_direct_umfpack.sif
