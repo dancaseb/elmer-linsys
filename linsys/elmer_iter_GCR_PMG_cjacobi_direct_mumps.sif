@@ -1,0 +1,33 @@
+! Note that these definitions need quadratic approximation, so
+! for a fair comparison compare with alternatives that also activate
+! Quadratic Approximation.
+
+  $LinStr = "GCR(50) + PMG{CJacobi + mumps}"
+  
+  Quadratic Approximation = True
+  Gradient Basis Functions = True
+
+! Parameters for the outer iteration: 
+  Linear System Solver = iterative 
+  Linear System Iterative Method = GCR 
+  Linear System Max Iterations = 200
+  Linear System GCR Restart = 50
+!  Linear System Abort Not Converged = False
+  Linear System Residual Output = 1
+  Linear System Scaling = True
+
+  Linear System Preconditioning = multigrid
+
+! Parameters for MG preconditioning
+  Edge Basis = True
+  MG Method = p
+  MG Levels = 2
+  MG Max Iterations = 1
+  MG Smoother = cjacobi
+  MG Pre Smoothing iterations = 6
+  MG Post Smoothing Iterations = 6
+  MG Smoother Relaxation Factor = 0.16667
+
+  MG Lowest Linear Solver = Direct
+  mglowest: Linear System Scaling = True
+  mglowest: Linear System Direct Method = mumps
