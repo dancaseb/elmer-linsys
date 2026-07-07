@@ -1,0 +1,50 @@
+! NOTES
+!
+! 1) These definitions need quadratic approximation, so
+!    for a fair comparison compare with alternatives that also activate
+!    Quadratic Approximation.
+! 2) The tolerance for stopping the linear solver must here be defined by using
+!    the name space "Outer: Linear System Convergence Tolerance". For a fair
+!    comparison check that this value is the same as given for other methods
+!    directly with "Linear System Convergence Tolerance". 
+
+  $LinStr = "GCR_Z(50) + BP for H(curl) of degree 2 + mumps"
+  
+  Quadratic Approximation = True
+  Gradient Basis Functions = True
+
+  Linear System Symmetric = True
+  Linear System Complex = True
+  Linear System Block Mode = True
+
+  Block Gauss-Seidel = True
+  Block Quadratic Hcurl System = Logical True
+  Block Preconditioner = True
+
+  Block Scaling = True
+
+! Linear system solver for outer loop
+!-----------------------------------------
+  Outer: Linear System Solver = "Iterative"
+  Outer: Linear System Convergence Tolerance = 1e-7
+  Outer: Linear System Iterative Method = gcr
+  Outer: Linear System Max Iterations = 200 
+  Outer: Linear System Residual Output = 1
+  Outer: Linear System GCR Restart = 50
+  Outer: Linear System Pseudo Complex = True
+
+  block 11: Linear System Solver = "direct"
+  block 11: Linear System direct method = "mumps"
+  block 11: Linear System Complex = True
+  block 11: Linear System Scaling = False
+
+  block 22: Linear System Solver = "Iterative"
+  block 22: Linear System Convergence Tolerance = 1e-2
+  block 22: Linear System Iterative Method = GCR !bicgstabl
+  block 22: Linear System GCR Restart = 20
+  block 22: Linear System Preconditioning = diagonal
+  block 22: Linear System Residual Output = 20
+  block 22: Linear System Max Iterations = 100
+  block 22: Linear System Complex = True
+  block 22: Linear System Abort Not Converged = False
+  block 22: Linear System Scaling = True

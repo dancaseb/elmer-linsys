@@ -12,3 +12,5 @@ linsys/elmer_iter_Idrs5_ILU1.sif
 linsys/elmer_iter_Idrs5_none.sif
 linsys/elmer_iter_GCR_PMG_cjacobi_direct_umfpack.sif
 linsys/elmer_iter_GCR_PMG_cjacobi_direct_mumps.sif
+linsys/BPC_GCR_Z_Quadratic_Hcurl_GCR_mumps.sif
+linsys/BPC_GCR_Z_Quadratic_Hcurl_GCR_umfpack.sif
