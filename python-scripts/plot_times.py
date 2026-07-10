@@ -87,7 +87,7 @@ def main():
 
         viz_total_time = args['viz_total_time']
         
-    data = pd.read_table(dat_filename, delim_whitespace=True, header=None)
+    data = pd.read_table(dat_filename,  sep=r"\s+", header=None)
     solvers = read_markers(dat_filename)
 
     column_names = read_names(dat_filename)
