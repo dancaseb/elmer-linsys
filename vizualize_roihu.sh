@@ -16,9 +16,11 @@ CASE_PATH=Navier/WinkelStructured
 # CASE_PATH=Poisson/WinkelUnstructured
 SCRIPT_PATH=python-scripts
 # PROBLEM=Navier
+
+#number of partitions used in the gpu run
 PARTITIONS=4
 FORMAT=png
-MESH_LEVELS=(2)
+MESH_LEVELS=(3)
 
 # Define the name and location where the scalability plot should be saved
 SCALE_NAME=scalability_test
@@ -36,7 +38,7 @@ TIME_PATH=$SCALE_PATH
 RET_PATH=$PWD/$CASE_PATH/results_amgx
 
 # Define the resulting .dat file (no need to change)
-RET_FILE=f72_$PARTITIONS.dat
+RET_FILE=f$PARTITIONS.dat
 
 # Define the used tolerance (no need to change)
 TOL=0.000001
