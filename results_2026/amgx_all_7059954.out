@@ -1,0 +1,491 @@
+
+Starting program Elmergrid, compiled on Mar 11 2025
+Elmergrid reading in-line arguments
+Using dual (elemental) graph in partitioning.
+The mesh will be partitioned with Metis to 4 partitions.
+Output will be saved to file winkel.
+
+Elmergrid loading data:
+-----------------------
+Loading the geometry from file 'winkel.grd'.
+Loading ElmerGrid file version: 210903
+Defining the coordinate system (3-DIM).
+Loading 2 subcell sizes in X-direction
+Loading 3 subcell sizes in Y-direction
+Loading 2 subcell sizes in Z-direction
+Loading material structure
+LoadElmergrid: materials interval is [0,3]
+Loading boundary conditions
+Found 4 boundaries
+Reached the end of command file
+Found 1 divisions for grid
+
+Loading ElmerGrid commands from file 'winkel.grd'.
+Reached the end of command file
+Read commands from a file
+
+Elmergrid creating and manipulating meshes:
+-------------------------------------------
+3 cells were created.
+Numbered 1281 knots in 1200 4-node elements.
+Numbering order was <x><y> and max levelwidth 43.
+80 element sides between materials 0 and 1 were located to type 1.
+20 element sides between materials 2 and 1 were located to type 2.
+20 element sides between materials 3 and 1 were located to type 3.
+60 element sides between materials 0 and 2 were located to type 4.
+Created 40 extruded divisions.
+Maximum elementtype 404 extruded to type 808.
+Allocated for 7 new BC lists
+Extruded mesh has 32000 elements in 40 levels.
+Simple extrusion would have 48000 elements
+Extruded BCs list 0 of types [1,1] has 1600 elements.
+Extruded BCs list 1 of types [2,2] has 400 elements.
+Extruded BCs list 2 of types [3,3] has 400 elements.
+Extruded BCs list 3 of types [4,4] has 2400 elements.
+Layer BCs list 4 of types [5,5] has 1200 elements.
+Layer BCs list 5 of types [6,6] has 800 elements.
+Layer BCs list 6 of types [7,7] has 400 elements.
+52521 original nodes moved to 35721 new ones.
+Created 32000 elements and 35721 nodes by extruding the 2D geometry
+
+Elmergrid partitioning meshes:
+------------------------------
+Making a Metis partitioning for 35721 nodes in 3-dimensions.
+Setting default Metis options!
+Setting user defined Metis options!
+Creating a dual graph of the finite element mesh
+Creating an inverse topology of the finite element mesh
+There are from 1 to 8 connections in the inverse topology.
+Each node is in average in 7.167 elements
+Removing connected nodes from the dual graph
+List of unconnected elements created
+Allocating for the dual graph for 32000 with 768866 connections
+There are at maximum 26 connections in dual graph (in element 1242).
+There are at all in all 768866 connections in dual graph.
+Average connection per active element in dual graph is 24.027
+There are 768866 connections altogether in the graph.
+Starting graph partitioning METIS_PartGraphKway.
+ Runtime parameters:
+   Objective type: METIS_OBJTYPE_CUT
+   Coarsening type: METIS_CTYPE_SHEM
+   Initial partitioning type: METIS_IPTYPE_METISRB
+   Refinement type: METIS_RTYPE_GREEDY
+   Perform a 2-hop matching: No
+   Number of balancing constraints: 1
+   Number of refinement iterations: 10
+   Random number seed: -1
+   Number of partitions: 4
+   Number of cuts: 1
+   User-supplied ufactor: 30
+   Minimize connectivity: No
+   Create contigous partitions: No
+   Target partition weights: 
+        0=[2.50e-01]   1=[2.50e-01]   2=[2.50e-01]   3=[2.50e-01]
+   Allowed maximum load imbalance: 1.030 
+
+
+ gk_mcore statistics
+           coresize:       512216         nmops:         2048  cmop:      0
+        num_callocs:           33   num_hallocs:            0
+       size_callocs:       807024  size_hallocs:            0
+        cur_callocs:            0   cur_hallocs:            0
+        max_callocs:       267552   max_hallocs:            0
+ nbrpool statistics
+        nbrpoolsize:            0   nbrpoolcpos:            0
+    nbrpoolreallocs:            0
+
+
+Timing Information -------------------------------------------------
+ Multilevel: 		   0.032
+     Coarsening: 		   0.019
+            Matching: 			   0.005
+            Contract: 			   0.014
+     Initial Partition: 	   0.007
+     Uncoarsening: 		   0.005
+          Refinement: 			   0.001
+          Projection: 			   0.004
+     Splitting: 		   0.000
+********************************************************************
+
+ gk_mcore statistics
+           coresize:       512216         nmops:         2048  cmop:      0
+        num_callocs:           62   num_hallocs:            0
+       size_callocs:      1034560  size_hallocs:            0
+        cur_callocs:            0   cur_hallocs:            0
+        max_callocs:       512064   max_hallocs:            0
+ nbrpool statistics
+        nbrpoolsize:       133731   nbrpoolcpos:       103660
+    nbrpoolreallocs:            4
+
+Finished Metis graph partitioning call.
+Number of nodal partitions: 4
+Set the node partitions by the dominating element partition.
+There are from 17069 to 18099 nodes in the 4 partitions.
+Successfully made a Metis partition using the dual graph.
+Optimizing the partitioning at boundaries.
+Ownership of 0 parents was changed at BCs
+Optimizing for 4 partitions
+Creating a table showing all parenting partitions of nodes.
+Nodes belong to 3 partitions in maximum
+There are 1560 shared nodes which is 4.37 % of all nodes.
+The initial owner was not any of the elements for 0 nodes
+Checking partitioning before optimization
+Checking for partitioning
+Information on partition bandwidth
+Distribution of elements, nodes and shared nodes
+     partition  elements   nodes      shared    
+     1          7928       8768       488       
+     2          7929       8945       301       
+     3          8012       8825       535       
+     4          8131       9183       272       
+Average number of elements in partition 8.930e+03
+Maximum deviation in ownership 415
+Average deviation in ownership 1.593e+02
+Average relative deviation 1.78 %
+Checking for problematic sharings
+Optimizing sharing for 4 partitions
+There shouldn't be any problematic sharings, knock, knock...
+Partitioning was not altered
+Partitioning routines finished!
+Bounding box of all nodes in mesh:
+X:[0,2] Y:[0,2] Z:[0,2]
+Calculate Mesh Pieces in mesh:
+There is a single piece in the mesh, so the mesh is conforming.
+
+Elmergrid saving data with method 2:
+-------------------------------------
+Saving Elmer mesh in partitioned format
+Number of boundary nodes at the boundary: 7202
+Number of additional interface nodes: 0
+Reusing existing subdirectory: partitioning.4
+Saving mesh in parallel ElmerSolver format to directory winkel/partitioning.4.
+Nodes belong to 3 partitions in maximum
+Saving mesh for 4 partitions
+   part  elements   nodes      shared   bc elems
+   1     7928       8768       488      1636    
+   2     7929       8945       301      1963    
+   3     8012       8825       535      1573    
+   4     8131       9183       272      2028    
+----------------------------------------------------------------------------------------------
+   ave   8000.0     8930.2     399.0    1800.0   0.0     
+Writing of partitioned mesh finished
+
+Thank you for using Elmergrid!
+Send bug reports and feature wishes to elmeradm@csc.fi
+
+
+-----------------------------------
+Starting linsysAMGX/amgx_bicgstab_amg.sif with mesh level 1
+
+ELMER SOLVER (v 9.0) STARTED AT: 2026/07/16 14:39:39
+ELMER SOLVER (v 9.0) STARTED AT: 2026/07/16 14:39:39
+ELMER SOLVER (v 9.0) STARTED AT: 2026/07/16 14:39:39
+ELMER SOLVER (v 9.0) STARTED AT: 2026/07/16 14:39:39
+ParCommInit:  Initialize #PEs:            4
+ParCommInit:  Initialize #PEs:            4
+ParCommInit:  Initialize #PEs:            4
+ParCommInit:  Initialize #PEs:            4
+MAIN: Read 2 integer parameters from command line!
+MAIN: 
+MAIN: =============================================================
+MAIN: ElmerSolver finite element software, Welcome!
+MAIN: This program is free software licensed under (L)GPL
+MAIN: Copyright 1st April 1995 - , CSC - IT Center for Science Ltd.
+MAIN: Webpage http://www.csc.fi/elmer, Email elmeradm@csc.fi
+MAIN: Version: 9.0 (Rev: 12f311015, Compiled: 2025-03-11)
+MAIN:  Running in parallel using 4 tasks.
+MAIN:  Running in parallel with 32 threads per task.
+MAIN:  HYPRE library linked in.
+MAIN:  MUMPS library linked in.
+MAIN:  MMG library linked in.
+MAIN:  ParMMG library linked in.
+MAIN:  Lua interpreter linked in.
+MAIN:  Zoltan library linked in.
+MAIN:  AMGX library linked in.
+MAIN: =============================================================
+MAIN: 
+MAIN: 
+MAIN: -------------------------------------
+MAIN: Reading Model: case.sif
+LoadInputFile: Scanning input file: case.sif
+LoadInputFile: Scanning only size info
+LoadInputFile: First time visiting
+LoadInputFile: Reading base load of sif file
+OpenIncludeFile: Trying to include file: linsys.sif
+CheckKeyword: Found keyword type assuming suffix 1 for: operator 2
+CheckKeyword: Found keyword type assuming suffix 1 for: operator 2
+CheckKeyword: Found keyword type assuming suffix 1 for: operator 3
+CheckKeyword: Found keyword type assuming suffix 1 for: operator 3
+CheckKeyword: Found keyword type assuming suffix 1 for: operator 4
+CheckKeyword: Found keyword type assuming suffix 1 for: operator 4
+CheckKeyword: Found keyword type assuming suffix 1 for: operator 5
+CheckKeyword: Found keyword type assuming suffix 1 for: operator 5
+LoadInputFile: Loading input file: case.sif
+LoadInputFile: Reading base load of sif file
+OpenIncludeFile: Trying to include file: linsys.sif
+CheckKeyword:  Unlisted keyword: [amgx config] in section: [solver 1]
+CheckKeyword: Found keyword type assuming suffix 1 for: operator 2
+CheckKeyword: Found keyword type assuming suffix 1 for: operator 2
+CheckKeyword: Found keyword type assuming suffix 1 for: operator 3
+CheckKeyword: Found keyword type assuming suffix 1 for: operator 3
+CheckKeyword: Found keyword type assuming suffix 1 for: operator 4
+CheckKeyword: Found keyword type assuming suffix 1 for: operator 4
+CheckKeyword: Found keyword type assuming suffix 1 for: operator 5
+CheckKeyword: Found keyword type assuming suffix 1 for: operator 5
+CheckKeyword:  Unlisted keyword: [expression 1] in section: [solver 2]
+CheckKeyword:  Unlisted keyword: [line marker] in section: [solver 2]
+LoadInputFile: Number of BCs: 3
+LoadInputFile: Number of Body Forces: 0
+LoadInputFile: Number of Initial Conditions: 0
+LoadInputFile: Number of Materials: 1
+LoadInputFile: Number of Equations: 1
+LoadInputFile: Number of Solvers: 2
+LoadInputFile: Number of Bodies: 1
+ListTagKeywords: Setting weight for keywords!
+ListTagKeywords: No parameters width suffix: normalize by area
+ListTagKeywords: Setting weight for keywords!
+ListTagKeywords: No parameters width suffix: normalize by volume
+ElmerAsciiMesh: Base mesh name: ./winkel
+LoadMesh: Elapsed REAL time:     0.0302 (s)
+MAIN: -------------------------------------
+AddVtuOutputSolverHack: Adding ResultOutputSolver to write VTU output in file: case
+StressSolve_init: --------------------------------------------------
+StressSolve_init: Solving displacements from linear elasticity model
+StressSolve_init: --------------------------------------------------
+OptimizeBandwidth: Initial bandwidth for linelast: 490
+OptimizeBandwidth: Optimized bandwidth for linelast: 1109
+OptimizeBandwidth: Bandwidth optimization rejected, using original ordering.
+MAIN: Number of timesteps to be saved: 1
+MAIN: 
+MAIN: -------------------------------------
+MAIN:  Steady state iteration:            1
+MAIN: -------------------------------------
+MAIN: 
+StressSolve: 
+StressSolve: --------------------------------------------------
+StressSolve: Solving displacements from linear elasticity model
+StressSolve: --------------------------------------------------
+StressSolve: Starting assembly...
+StressSolve: Assembly:
+Process 3 selecting device 3
+Process 1 selecting device 1
+Process 2 selecting device 2
+AMGX version 2.2.0.132-opensource
+Built on Mar 11 2025, 14:25:11
+Compiled with CUDA Runtime 11.5, using CUDA driver 12.2
+Process 0 selecting device 0
+Using Normal MPI (Hostbuffer) communicator...
+Caught amgx exception: Vector size too small: not enough space for halo elements.
+Vector: {tag = -1, size = 28671}
+Required size: -393
+
+ at: /users/tzwinger/Source/amgx/base/src/distributed/comms_visitors3.cu:46
+Stack trace:
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : ()+0x3985307
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : ()+0x3a19b65
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : void amgx::CommsMPIHostBufferStream<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >::do_exchange_halo<amgx::Vector<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)2, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> > >(amgx::Vector<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)2, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >&, amgx::Matrix<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> > const&, int)+0x1f1
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : amgx::classical::Classical_AMG_Level_Base<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >::markCoarseFinePoints()+0x86a
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : amgx::classical::Classical_AMG_Level_Base<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >::createCoarseVertices()+0x938
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : ()+0x44b2f1e
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : void amgx::AMG_Setup<(AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2>::setup<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2>, (AMGX_MemorySpace)1, (AMGX_MemorySpace)0>(amgx::AMG<(AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2>*, amgx::Matrix<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >&)+0x102
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : amgx::AMG<(AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2>::setup(amgx::Matrix<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >&)+0xdf
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : amgx::Solver<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >::setup(amgx::Operator<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >&, bool)+0x21d
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : amgx::PBiCGStab_Solver<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >::solver_setup(bool)+0x2d7
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : amgx::Solver<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >::setup(amgx::Operator<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >&, bool)+0x21d
+Caught amgx exception: Vector size too small: not enough space for halo elements.
+Vector: {tag = -1, size = 29199}
+Required size: -1563
+
+ at: /users/tzwinger/Source/amgx/base/src/distributed/comms_visitors3.cu:46
+Stack trace:
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : ()+0x3985307
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : ()+0x3a19b65
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : void amgx::CommsMPIHostBufferStream<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >::do_exchange_halo<amgx::Vector<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)2, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> > >(amgx::Vector<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)2, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >&, amgx::Matrix<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> > const&, int)+0x1f1
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : amgx::classical::Classical_AMG_Level_Base<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >::markCoarseFinePoints()+0x86a
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : amgx::classical::Classical_AMG_Level_Base<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >::createCoarseVertices()+0x938
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : ()+0x44b2f1e
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : void amgx::AMG_Setup<(AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2>::setup<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2>, (AMGX_MemorySpace)1, (AMGX_MemorySpace)0>(amgx::AMG<(AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2>*, amgx::Matrix<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >&)+0x102
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : amgx::AMG<(AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2>::setup(amgx::Matrix<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >&)+0xdf
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : amgx::Solver<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >::setup(amgx::Operator<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >&, bool)+0x21d
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : amgx::PBiCGStab_Solver<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >::solver_setup(bool)+0x2d7
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : amgx::Solver<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >::setup(amgx::Operator<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >&, bool)+0x21d
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : amgx::Solver<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >::setup_no_throw(amgx::Operator<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >&, bool)+0x6a
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : amgx::AMG_Solver<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >::setup(amgx::Matrix<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >&)+0x5c
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : ()+0x1e3467e
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : AMGX_solver_setup()+0x344
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : AMGXSolve()+0x3f5
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : __solverutils_MOD_amgxsolver()+0x85e
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : __solverutils_MOD_solvelinearsystem()+0x5fef
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : __solverutils_MOD_solvesystem()+0xd9d
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : __defutils_MOD_defaultsolve()+0x872
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/share/elmersolver/lib/StressSolve.so : stresssolver_()+0x512d
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : __mainutils_MOD_singlesolver()+0xbd4
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : __mainutils_MOD_solveractivate()+0xc75
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : ()+0x17264da
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : __mainutils_MOD_solveequations()+0x997
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : ()+0x1bfbbd3
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : elmersolver_()+0x2423
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/ElmerSolver() [0x402402]
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/ElmerSolver() [0x40214f]
+ /lib64/libc.so.6 : __libc_start_main()+0xe5
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/ElmerSolver() [0x4021ae]
+
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : amgx::Solver<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >::setup_no_throw(amgx::Operator<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >&, bool)+0x6a
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : amgx::AMG_Solver<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >::setup(amgx::Matrix<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >&)+0x5c
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : ()+0x1e3467e
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : AMGX_solver_setup()+0x344
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : AMGXSolve()+0x3f5
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : __solverutils_MOD_amgxsolver()+0x85e
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : __solverutils_MOD_solvelinearsystem()+0x5fef
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : __solverutils_MOD_solvesystem()+0xd9d
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : __defutils_MOD_defaultsolve()+0x872
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/share/elmersolver/lib/StressSolve.so : stresssolver_()+0x512d
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : __mainutils_MOD_singlesolver()+0xbd4
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : __mainutils_MOD_solveractivate()+0xc75
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : ()+0x17264da
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : __mainutils_MOD_solveequations()+0x997
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : ()+0x1bfbbd3
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : elmersolver_()+0x2423
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/ElmerSolver() [0x402402]
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/ElmerSolver() [0x40214f]
+ /lib64/libc.so.6 : __libc_start_main()+0xe5
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/ElmerSolver() [0x4021ae]
+
+Caught amgx exception: Error, setup must be called before calling solve
+ at: /users/tzwinger/Source/amgx/base/src/solvers/solver.cu:597
+Stack trace:
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : amgx::Solver<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >::solve(amgx::Vector<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >&, amgx::Vector<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >&, bool)+0x6a0
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : amgx::Solver<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >::solve_no_throw(amgx::Vector<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >&, amgx::Vector<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >&, amgx::AMGX_STATUS&, bool)+0x6f
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : amgx::AMG_Solver<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >::solve(amgx::Vector<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >&, amgx::Vector<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >&, amgx::AMGX_STATUS&, bool)+0x3d
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : ()+0x1e3f59e
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : AMGX_solver_solve()+0x340
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : AMGXSolve()+0x412
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : __solverutils_MOD_amgxsolver()+0x85e
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : __solverutils_MOD_solvelinearsystem()+0x5fef
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : __solverutils_MOD_solvesystem()+0xd9d
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : __defutils_MOD_defaultsolve()+0x872
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/share/elmersolver/lib/StressSolve.so : stresssolver_()+0x512d
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : __mainutils_MOD_singlesolver()+0xbd4
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : __mainutils_MOD_solveractivate()+0xc75
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : ()+0x17264da
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : __mainutils_MOD_solveequations()+0x997
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : ()+0x1bfbbd3
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : elmersolver_()+0x2423
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/ElmerSolver() [0x402402]
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/ElmerSolver() [0x40214f]
+Caught amgx exception: Error, setup must be called before calling solve
+ at: /users/tzwinger/Source/amgx/base/src/solvers/solver.cu:597
+Stack trace:
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : amgx::Solver<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >::solve(amgx::Vector<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >&, amgx::Vector<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >&, bool)+0x6a0
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : amgx::Solver<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >::solve_no_throw(amgx::Vector<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >&, amgx::Vector<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >&, amgx::AMGX_STATUS&, bool)+0x6f
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : amgx::AMG_Solver<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >::solve(amgx::Vector<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >&, amgx::Vector<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >&, amgx::AMGX_STATUS&, bool)+0x3d
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : ()+0x1e3f59e
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : AMGX_solver_solve()+0x340
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : AMGXSolve()+0x412
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : __solverutils_MOD_amgxsolver()+0x85e
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : __solverutils_MOD_solvelinearsystem()+0x5fef
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : __solverutils_MOD_solvesystem()+0xd9d
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : __defutils_MOD_defaultsolve()+0x872
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/share/elmersolver/lib/StressSolve.so : stresssolver_()+0x512d
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : __mainutils_MOD_singlesolver()+0xbd4
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : __mainutils_MOD_solveractivate()+0xc75
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : ()+0x17264da
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : __mainutils_MOD_solveequations()+0x997
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : ()+0x1bfbbd3
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : elmersolver_()+0x2423
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/ElmerSolver() [0x402402]
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/ElmerSolver() [0x40214f]
+ /lib64/libc.so.6 : __libc_start_main()+0xe5
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/ElmerSolver() [0x4021ae]
+
+Thrust failure: transform: failed to synchronize: cudaErrorIllegalAddress: an illegal memory access was encountered
+File and line number are not available for this exception.
+Caught amgx exception: Error, setup must be called before calling solve
+ at: /users/tzwinger/Source/amgx/base/src/solvers/solver.cu:597
+Stack trace:
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : amgx::Solver<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >::solve(amgx::Vector<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >&, amgx::Vector<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >&, bool)+0x6a0
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : amgx::Solver<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >::solve_no_throw(amgx::Vector<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >&, amgx::Vector<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >&, amgx::AMGX_STATUS&, bool)+0x6f
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : amgx::AMG_Solver<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >::solve(amgx::Vector<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >&, amgx::Vector<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >&, amgx::AMGX_STATUS&, bool)+0x3d
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : ()+0x1e3f59e
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : AMGX_solver_solve()+0x340
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : AMGXSolve()+0x412
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : __solverutils_MOD_amgxsolver()+0x85e
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : __solverutils_MOD_solvelinearsystem()+0x5fef
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : __solverutils_MOD_solvesystem()+0xd9d
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : __defutils_MOD_defaultsolve()+0x872
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/share/elmersolver/lib/StressSolve.so : stresssolver_()+0x512d
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : __mainutils_MOD_singlesolver()+0xbd4
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : __mainutils_MOD_solveractivate()+0xc75
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : ()+0x17264da
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : __mainutils_MOD_solveequations()+0x997
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : ()+0x1bfbbd3
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : elmersolver_()+0x2423
+ /lib64/libc.so.6 : __libc_start_main()+0xe5
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/ElmerSolver() [0x4021ae]
+
+Thrust failure: transform: failed to synchronize: cudaErrorIllegalAddress: an illegal memory access was encountered
+File and line number are not available for this exception.
+Caught amgx exception: Error, setup must be called before calling solve
+ at: /users/tzwinger/Source/amgx/base/src/solvers/solver.cu:597
+Stack trace:
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : amgx::Solver<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >::solve(amgx::Vector<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >&, amgx::Vector<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >&, bool)+0x6a0
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : amgx::Solver<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >::solve_no_throw(amgx::Vector<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >&, amgx::Vector<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >&, amgx::AMGX_STATUS&, bool)+0x6f
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : amgx::AMG_Solver<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >::solve(amgx::Vector<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >&, amgx::Vector<amgx::TemplateConfig<(AMGX_MemorySpace)1, (AMGX_VecPrecision)0, (AMGX_MatPrecision)0, (AMGX_IndPrecision)2> >&, amgx::AMGX_STATUS&, bool)+0x3d
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : ()+0x1e3f59e
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : AMGX_solver_solve()+0x340
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : AMGXSolve()+0x412
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : __solverutils_MOD_amgxsolver()+0x85e
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : __solverutils_MOD_solvelinearsystem()+0x5fef
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : __solverutils_MOD_solvesystem()+0xd9d
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : __defutils_MOD_defaultsolve()+0x872
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/share/elmersolver/lib/StressSolve.so : stresssolver_()+0x512d
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : __mainutils_MOD_singlesolver()+0xbd4
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : __mainutils_MOD_solveractivate()+0xc75
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : ()+0x17264da
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : __mainutils_MOD_solveequations()+0x997
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : ()+0x1bfbbd3
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/../lib/elmersolver/libelmersolver.so : elmersolver_()+0x2423
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/ElmerSolver() [0x402402]
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/ElmerSolver() [0x40214f]
+ /lib64/libc.so.6 : __libc_start_main()+0xe5
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/ElmerSolver() [0x4021ae]
+
+Thrust failure: parallel_for failed: cudaErrorIllegalAddress: an illegal memory access was encountered
+File and line number are not available for this exception.
+ComputeChange: NS (ITER=1) (NRM,RELC): (  0.0000000      0.0000000     ) :: linelast
+SolveSystem: Linear system time (CPU,REAL) for displacement:     1.68   11.60 (s)
+StressSolver: All done
+StressSolver: ------------------------------------------
+SolverActivate: Solver time (CPU,REAL) for linelast:     2.28   12.25 (s)
+ComputeChange: SS (ITER=1) (NRM,RELC): (  0.0000000      0.0000000     ) :: linelast
+SaveScalars: -----------------------------------------
+SaveScalars: Saving scalar values of various kinds
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/ElmerSolver() [0x402402]
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/ElmerSolver() [0x40214f]
+ /lib64/libc.so.6 : __libc_start_main()+0xe5
+ /appl/soft/eng/elmer/gcc-11.2.0/openmpi-4.1.2-cuda/Elmer_devel_12f311015-cuda/bin/ElmerSolver() [0x4021ae]
+
+Thrust failure: parallel_for failed: cudaErrorIllegalAddress: an illegal memory access was encountered
+File and line number are not available for this exception.
+SaveScalars: Saving names of values to file: results_amgx/f4.dat.names
+SaveScalars: Saving values to file: results_amgx/f4.dat
+ResultOutputSolver: -------------------------------------
+ResultOutputSolver: Saving with prefix: case
+ResultOutputSolver: Creating list for saving - if not present
+CreateListForSaving: Field Variables for Saving
+ResultOutputSolver: Saving in unstructured VTK XML (.vtu) format
+VtuOutputSolver: Saving results in VTK XML format with prefix: case
+VtuOutputSolver: Saving number of partitions: 4
+ResultOutputSolver: -------------------------------------
+WARNING:: CompareToReferenceSolution: Solver 1 FAILED:  Norm = 0.00000000E+00  RefNorm = 2.33900606E-02
+CompareToReferenceSolution: Relative Error to reference norm: 1.000000E+00
+WARNING:: CompareToReferenceSolution: FAILED 1 tests out of 1!
+MAIN: *** Elmer Solver: ALL DONE ***
+[1784201996.344717] [g1101:2370030:0]       tag_match.c:62   UCX  WARN  unexpected tag-receive descriptor 0x12d15c0 was not matched
+[1784201996.344738] [g1101:2370030:0]       tag_match.c:62   UCX  WARN  unexpected tag-receive descriptor 0x12d1500 was not matched
+[1784201996.345666] [g1101:2370028:0]       tag_match.c:62   UCX  WARN  unexpected tag-receive descriptor 0x15c8480 was not matched
+[1784201996.345686] [g1101:2370028:0]       tag_match.c:62   UCX  WARN  unexpected tag-receive descriptor 0x15c8540 was not matched
+MAIN: The end
+SOLVER TOTAL TIME(CPU,REAL):         2.71       17.34
+ELMER SOLVER FINISHED AT: 2026/07/16 14:39:56
+Caught signal 6 - SIGABRT (abort)

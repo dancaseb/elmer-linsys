@@ -1,0 +1,4007 @@
+######################################
+# Elmer 26.01 ( devel_b2b02d709 ) 
+#            environment loaded
+# 
+# EEEEE LL     MM   MM EEEEE RRRR
+# EE    LL     MMM MMM EE    RR  R
+# EEE   LL     MM M MM EEE   RRRR
+# EE    LL     MM   MM EE    R R
+# EEEEE LLLLLL MM   MM EEEEE R  R
+# 
+# date: May 27 10:34:09 EEST 2026
+# this version includes
+# * Elmer/Ice
+# * Hypre
+# * Mumps
+# * rocALUTION (non-GPU)
+# * NetCDF (GridDataReader)
+# * (Par)MMG
+# * Zoltan
+# * Lua
+# * ScatteredDataInterpolator (CSA,NN)
+# * XIOS
+#   
+# OpenMP is enabled
+# In case of problems: zwinger@csc.fi
+######################################
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO IEEE_UNDERFLOW_FLAG
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO IEEE_UNDERFLOW_FLAG
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO IEEE_UNDERFLOW_FLAG
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO IEEE_UNDERFLOW_FLAG
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO IEEE_UNDERFLOW_FLAG
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO IEEE_UNDERFLOW_FLAG
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO IEEE_UNDERFLOW_FLAG
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_UNDERFLOW_FLAG
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO IEEE_UNDERFLOW_FLAG
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO IEEE_UNDERFLOW_FLAG
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO IEEE_UNDERFLOW_FLAG
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO IEEE_UNDERFLOW_FLAG
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_UNDERFLOW_FLAG
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO IEEE_UNDERFLOW_FLAG
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO IEEE_UNDERFLOW_FLAG
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO IEEE_UNDERFLOW_FLAG
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_UNDERFLOW_FLAG
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_UNDERFLOW_FLAG
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_UNDERFLOW_FLAG
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO IEEE_UNDERFLOW_FLAG
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO IEEE_UNDERFLOW_FLAG
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO IEEE_UNDERFLOW_FLAG
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_UNDERFLOW_FLAG
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO IEEE_UNDERFLOW_FLAG
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO IEEE_UNDERFLOW_FLAG
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO IEEE_UNDERFLOW_FLAG
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO IEEE_UNDERFLOW_FLAG
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO IEEE_UNDERFLOW_FLAG
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO IEEE_UNDERFLOW_FLAG
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO IEEE_UNDERFLOW_FLAG
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO IEEE_UNDERFLOW_FLAG
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO IEEE_UNDERFLOW_FLAG
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO IEEE_UNDERFLOW_FLAG
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO IEEE_UNDERFLOW_FLAG
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_UNDERFLOW_FLAG
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO IEEE_UNDERFLOW_FLAG
+STOP 1
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+Note: The following floating-point exceptions are signalling: IEEE_DIVIDE_BY_ZERO
+STOP 1
+slurmstepd: error:  mpi/pmix_v3: _errhandler: c4121 [6]: pmixp_client_v2.c:212: Error handler invoked: status = -25, source = [slurm.pmix.7084073.1:815]
+slurmstepd: error:  mpi/pmix_v3: _errhandler: c1313 [1]: pmixp_client_v2.c:212: Error handler invoked: status = -25, source = [slurm.pmix.7084073.1:189]
+slurmstepd: error:  mpi/pmix_v3: _errhandler: c4328 [12]: pmixp_client_v2.c:212: Error handler invoked: status = -25, source = [slurm.pmix.7084073.1:1646]
+slurmstepd: error:  mpi/pmix_v3: _errhandler: c4174 [10]: pmixp_client_v2.c:212: Error handler invoked: status = -25, source = [slurm.pmix.7084073.1:1310]
+slurmstepd: error:  mpi/pmix_v3: _errhandler: c5155 [14]: pmixp_client_v2.c:212: Error handler invoked: status = -25, source = [slurm.pmix.7084073.1:1863]
+slurmstepd: error:  mpi/pmix_v3: _errhandler: c1322 [2]: pmixp_client_v2.c:212: Error handler invoked: status = -25, source = [slurm.pmix.7084073.1:333]
+slurmstepd: error: *** STEP 7084073.1 ON c1230 CANCELLED AT 2026-07-22T12:18:23 ***
+slurmstepd: error:  mpi/pmix_v3: _errhandler: c4142 [7]: pmixp_client_v2.c:212: Error handler invoked: status = -25, source = [slurm.pmix.7084073.1:951]
+slurmstepd: error:  mpi/pmix_v3: _errhandler: c3331 [4]: pmixp_client_v2.c:212: Error handler invoked: status = -25, source = [slurm.pmix.7084073.1:613]
+slurmstepd: error:  mpi/pmix_v3: _errhandler: c4270 [11]: pmixp_client_v2.c:212: Error handler invoked: status = -25, source = [slurm.pmix.7084073.1:1511]
+slurmstepd: error:  mpi/pmix_v3: _errhandler: c5176 [15]: pmixp_client_v2.c:212: Error handler invoked: status = -25, source = [slurm.pmix.7084073.1:1983]
+slurmstepd: error:  mpi/pmix_v3: _errhandler: c3130 [3]: pmixp_client_v2.c:212: Error handler invoked: status = -25, source = [slurm.pmix.7084073.1:439]
+slurmstepd: error:  mpi/pmix_v3: _errhandler: c5101 [13]: pmixp_client_v2.c:212: Error handler invoked: status = -25, source = [slurm.pmix.7084073.1:1727]
+srun: Job step aborted: Waiting up to 62 seconds for job step to finish.
+slurmstepd: error:  mpi/pmix_v3: _errhandler: c4143 [8]: pmixp_client_v2.c:212: Error handler invoked: status = -25, source = [slurm.pmix.7084073.1:1119]
+slurmstepd: error:  mpi/pmix_v3: _errhandler: c4111 [5]: pmixp_client_v2.c:212: Error handler invoked: status = -25, source = [slurm.pmix.7084073.1:703]
+slurmstepd: error:  mpi/pmix_v3: _errhandler: c4148 [9]: pmixp_client_v2.c:212: Error handler invoked: status = -25, source = [slurm.pmix.7084073.1:1239]
+slurmstepd: error:  mpi/pmix_v3: _errhandler: c1230 [0]: pmixp_client_v2.c:212: Error handler invoked: status = -25, source = [slurm.pmix.7084073.1:105]
+srun: error: c4142: tasks 896-1023: Exited with exit code 1
+srun: Terminating StepId=7084073.1
+srun: error: c4148: tasks 1152-1279: Exited with exit code 1
+srun: error: c4174: tasks 1280-1407: Exited with exit code 1
+srun: error: c5155: tasks 1792-1919: Exited with exit code 1
+srun: error: c4111: tasks 640-767: Exited with exit code 1
+srun: error: c1322: tasks 256-383: Exited with exit code 1
+srun: error: c5176: tasks 1920-2047: Exited with exit code 1
+srun: error: c4328: tasks 1536-1663: Exited with exit code 1
+srun: error: c4143: tasks 1024-1151: Exited with exit code 1
+srun: error: c5101: tasks 1664-1791: Exited with exit code 1
+srun: error: c4270: tasks 1408-1535: Exited with exit code 1
+srun: error: c4121: tasks 768-895: Exited with exit code 1
+srun: error: c1313: tasks 128-255: Exited with exit code 1
+srun: error: c3331: tasks 512-639: Exited with exit code 1
+srun: error: c1230: tasks 0-127: Exited with exit code 1
+srun: error: c3130: tasks 384-511: Exited with exit code 1

@@ -1,17 +1,15 @@
 #!/bin/bash 
 #SBATCH --time=01:00:00
-#SBATCH --job-name=run_complete
+#SBATCH --job-name=scaling_test
 #SBATCH --output=logs/%x_%j.out
 #SBATCH --error=logs/%x_%j.err
-#SBATCH --partition=small
+#SBATCH --partition=medium
 #SBATCH --account=project_2001659
 #SBATCH --nodes=1
-#SBATCH --ntasks-per-node=384
+#SBATCH --ntasks-per-node=128
 
 export OMP_NUM_THREADS=1
-
-
-module load elmerfem
+module load elmer/latest
 module load python-data
 
 
@@ -35,7 +33,7 @@ SCRIPT_PATH=python-scripts
 PROBLEM=Navier-short
 
 # Define the mesh levels to loop over
-MESH_LEVELS=(1 2 3)
+MESH_LEVELS=(4)
 
 # Define the format in which figures should be saved
 FORMAT=png
@@ -45,7 +43,7 @@ PARTITIONS=$SLURM_NPROCS
 
 # Define the name and location where the scalability plot should be saved
 SCALE_NAME=scalability_test
-SCALE_PATH=$PWD/results/roihu/Navier-WinkelStructured-$PARTITIONS
+SCALE_PATH=$PWD/results/mahti/Navier-WinkelStructured-$PARTITIONS
 
 # Define the name and location where the timing plots should be saved
 # (these will be incremented with the mesh level)

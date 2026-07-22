@@ -1,10 +1,34 @@
 ## CPU testing
 
+### FETI errors
 logs/run_complete_301387.out shows some errors when using Feti. Is this expected?
 
 ** Error/warning return ** from Analysis *  INFO(1:2)=   1           37020
 
-Seems to converge to a solution though.
+Seems to converge to a solution though for 128 cores.
+
+### Solver elmer_iter_GCR_BP_CMG_SGS.sif
+Not sure what this solver is supposed to be - sets both GCR and FETI. FETI overrides GCR
+
+### Total Feti?
+
+In feti solver, total feti is set to true. But in elmer source code examples, Total Feti is set to False with a comment that it provides incorrect results
+
+### Small test case for Navier (1 node)
+comparing: 
+linsys/elmer_iter_BiCGStab2_ILU0.sif
+linsys/elmer_feti_mumps_10.sif
+linsys/elmer_iter_CG_ILU0.sif
+linsys/elmer_iter_Idrs5_ILU0.sif
+
+For 384 cores (full 1 node)
+linsys/elmer_iter_BiCGStab2_ILU0.sif doesnt converge
+linsys/elmer_feti_mumps_10.sif runs out of memory
+
+Test log: logs/run_complete_302717.out (no BiCGStab2)
+
+Next: try to test same mesh, but only CG and Idrs5
+
 
 
 
