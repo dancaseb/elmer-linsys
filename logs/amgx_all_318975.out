@@ -1,0 +1,654 @@
+
+Starting program Elmergrid, compiled on Jul 13 2026
+Elmergrid reading in-line arguments
+Using dual (elemental) graph in partitioning.
+The mesh will be partitioned with Metis to 3 partitions.
+Output will be saved to file winkel.
+
+Elmergrid loading data:
+-----------------------
+Loading the geometry from file 'winkel.grd'.
+Loading ElmerGrid file version: 210903
+Defining the coordinate system (3-DIM).
+Loading 2 subcell sizes in X-direction
+Loading 3 subcell sizes in Y-direction
+Loading 2 subcell sizes in Z-direction
+Loading material structure
+LoadElmergrid: materials interval is [0,3]
+Loading boundary conditions
+Found 4 boundaries
+Reached the end of command file
+Found 1 divisions for grid
+
+Loading ElmerGrid commands from file 'winkel.grd'.
+Reached the end of command file
+Read commands from a file
+
+Elmergrid creating and manipulating meshes:
+-------------------------------------------
+3 cells were created.
+Numbered 1281 knots in 1200 4-node elements.
+Numbering order was <x><y> and max levelwidth 43.
+80 element sides between materials 0 and 1 were located to type 1.
+20 element sides between materials 2 and 1 were located to type 2.
+20 element sides between materials 3 and 1 were located to type 3.
+60 element sides between materials 0 and 2 were located to type 4.
+Created 40 extruded divisions.
+Maximum elementtype 404 extruded to type 808.
+Allocated for 7 new BC lists
+Extruded mesh has 32000 elements in 40 levels.
+Simple extrusion would have 48000 elements
+Extruded BCs list 0 of types [1,1] has 1600 elements.
+Extruded BCs list 1 of types [2,2] has 400 elements.
+Extruded BCs list 2 of types [3,3] has 400 elements.
+Extruded BCs list 3 of types [4,4] has 2400 elements.
+Layer BCs list 4 of types [5,5] has 1200 elements.
+Layer BCs list 5 of types [6,6] has 800 elements.
+Layer BCs list 6 of types [7,7] has 400 elements.
+52521 original nodes moved to 35721 new ones.
+Created 32000 elements and 35721 nodes by extruding the 2D geometry
+
+Elmergrid partitioning meshes:
+------------------------------
+Making a Metis partitioning for 35721 nodes in 3-dimensions.
+Setting default Metis options!
+Setting user defined Metis options!
+Creating a dual graph of the finite element mesh
+Creating an inverse topology of the finite element mesh
+There are from 1 to 8 connections in the inverse topology.
+Each node is in average in 7.167 elements
+Removing connected nodes from the dual graph
+List of unconnected elements created
+Allocating for the dual graph for 32000 with 768866 connections
+There are at maximum 26 connections in dual graph (in element 1242).
+There are at all in all 768866 connections in dual graph.
+Average connection per active element in dual graph is 24.027
+There are 768866 connections altogether in the graph.
+Starting graph partitioning METIS_PartGraphKway.
+ Runtime parameters:
+   Objective type: METIS_OBJTYPE_CUT
+   Coarsening type: METIS_CTYPE_SHEM
+   Initial partitioning type: METIS_IPTYPE_METISRB
+   Refinement type: METIS_RTYPE_GREEDY
+   Perform a 2-hop matching: No
+   Number of balancing constraints: 1
+   Number of refinement iterations: 10
+   Random number seed: -1
+   Number of partitions: 3
+   Number of cuts: 1
+   User-supplied ufactor: 30
+   Minimize connectivity: No
+   Create contigous partitions: No
+   Target partition weights: 
+        0=[3.33e-01]   1=[3.33e-01]   2=[3.33e-01]
+   Allowed maximum load imbalance: 1.030 
+
+
+ gk_mcore statistics
+           coresize:       512176         nmops:         2048  cmop:      0
+        num_callocs:           27   num_hallocs:            0
+       size_callocs:       788464  size_hallocs:            0
+        cur_callocs:            0   cur_hallocs:            0
+        max_callocs:       267552   max_hallocs:            0
+ nbrpool statistics
+        nbrpoolsize:            0   nbrpoolcpos:            0
+    nbrpoolreallocs:            0
+
+
+Timing Information -------------------------------------------------
+ Multilevel: 		   0.016
+     Coarsening: 		   0.009
+            Matching: 			   0.003
+            Contract: 			   0.006
+     Initial Partition: 	   0.005
+     Uncoarsening: 		   0.002
+          Refinement: 			   0.001
+          Projection: 			   0.001
+     Splitting: 		   0.000
+********************************************************************
+
+ gk_mcore statistics
+           coresize:       512176         nmops:         2048  cmop:      0
+        num_callocs:           53   num_hallocs:            0
+       size_callocs:      1030480  size_hallocs:            0
+        cur_callocs:            0   cur_hallocs:            0
+        max_callocs:       512064   max_hallocs:            0
+ nbrpool statistics
+        nbrpoolsize:        93552   nbrpoolcpos:        86377
+    nbrpoolreallocs:            1
+
+Finished Metis graph partitioning call.
+Number of nodal partitions: 3
+Set the node partitions by the dominating element partition.
+There are from 23303 to 23511 nodes in the 3 partitions.
+Successfully made a Metis partition using the dual graph.
+Optimizing the partitioning at boundaries.
+Ownership of 0 parents was changed at BCs
+Optimizing for 3 partitions
+Creating a table showing all parenting partitions of nodes.
+Nodes belong to 3 partitions in maximum
+There are 1266 shared nodes which is 3.54 % of all nodes.
+The initial owner was not any of the elements for 0 nodes
+Checking partitioning before optimization
+Checking for partitioning
+Information on partition bandwidth
+Distribution of elements, nodes and shared nodes
+     partition  elements   nodes      shared    
+     1          10580      11833      326       
+     2          10868      12080      617       
+     3          10552      11808      325       
+Average number of elements in partition 1.191e+04
+Maximum deviation in ownership 272
+Average deviation in ownership 1.228e+02
+Average relative deviation 1.03 %
+Checking for problematic sharings
+Optimizing sharing for 3 partitions
+There shouldn't be any problematic sharings, knock, knock...
+Partitioning was not altered
+Partitioning routines finished!
+Bounding box of all nodes in mesh:
+X:[0,2] Y:[0,2] Z:[0,2]
+Calculate Mesh Pieces in mesh:
+There is a single piece in the mesh, so the mesh is conforming.
+
+Elmergrid saving data with method 2:
+-------------------------------------
+Saving Elmer mesh in partitioned format
+Number of boundary nodes at the boundary: 7202
+Number of additional interface nodes: 0
+Created subdirectory: partitioning.3
+Saving mesh in parallel ElmerSolver format to directory winkel/partitioning.3.
+Nodes belong to 3 partitions in maximum
+Saving mesh for 3 partitions
+   part  elements   nodes      shared   bc elems
+   1     10580      11833      326      2438    
+   2     10868      12080      617      2329    
+   3     10552      11808      325      2433    
+----------------------------------------------------------------------------------------------
+   ave   10666.7    11907.0    422.7    2400.0   0.0     
+Writing of partitioned mesh finished
+
+Thank you for using Elmergrid!
+Send bug reports and feature wishes to elmeradm@csc.fi
+
+Solver linsysAMGX/amgx_bicgstab_amg.sif not recommended for given problem. Ignoring it
+
+
+Solver linsysAMGX/amgx_bicgstab_none.sif not recommended for given problem. Ignoring it
+
+
+
+-----------------------------------
+Starting linsysAMGX/amgx_cg_dilu.sif with mesh level 4
+
+Diagnostic: UCX_RNDV_THRESH as seen inside the container:
+UCX_RNDV_THRESH=0
+UCX_RNDV_THRESH=0
+UCX_RNDV_THRESH=0
+Diagnostic: ulimits on the host (compute node, outside container):
+real-time non-blocking time  (microseconds, -R) unlimited
+core file size              (blocks, -c) 0
+data seg size               (kbytes, -d) unlimited
+scheduling priority                 (-e) 0
+file size                   (blocks, -f) unlimited
+pending signals                     (-i) 488532
+max locked memory           (kbytes, -l) unlimited
+max memory size             (kbytes, -m) 666888192
+open files                          (-n) 131000
+pipe size                (512 bytes, -p) 8
+POSIX message queues         (bytes, -q) 819200
+real-time priority                  (-r) 0
+stack size                  (kbytes, -s) 8192
+cpu time                   (seconds, -t) unlimited
+max user processes                  (-u) 100000
+virtual memory              (kbytes, -v) unlimited
+file locks                          (-x) unlimited
+Diagnostic: ulimits as seen inside the container (per task):
+real-time non-blocking time  (microseconds, -R) unlimited
+core file size              (blocks, -c) 0
+data seg size               (kbytes, -d) unlimited
+scheduling priority                 (-e) 0
+file size                   (blocks, -f) unlimited
+pending signals                     (-i) 488532
+max locked memory           (kbytes, -l) unlimited
+max memory size             (kbytes, -m) 666888192
+open files                          (-n) 131000
+pipe size                (512 bytes, -p) 8
+POSIX message queues         (bytes, -q) 819200
+real-time priority                  (-r) 0
+stack size                  (kbytes, -s) 8192
+cpu time                   (seconds, -t) unlimited
+max user processes                  (-u) 100000
+virtual memory              (kbytes, -v) unlimited
+file locks                          (-x) unlimited
+real-time non-blocking time  (microseconds, -R) unlimited
+core file size              (blocks, -c) 0
+data seg size               (kbytes, -d) unlimited
+scheduling priority                 (-e) 0
+file size                   (blocks, -f) unlimited
+pending signals                     (-i) 488532
+max locked memory           (kbytes, -l) unlimited
+max memory size             (kbytes, -m) 666888192
+open files                          (-n) 131000
+pipe size                (512 bytes, -p) 8
+POSIX message queues         (bytes, -q) 819200
+real-time priority                  (-r) 0
+stack size                  (kbytes, -s) 8192
+cpu time                   (seconds, -t) unlimited
+max user processes                  (-u) 100000
+virtual memory              (kbytes, -v) unlimited
+file locks                          (-x) unlimited
+real-time non-blocking time  (microseconds, -R) unlimited
+core file size              (blocks, -c) 0
+data seg size               (kbytes, -d) unlimited
+scheduling priority                 (-e) 0
+file size                   (blocks, -f) unlimited
+pending signals                     (-i) 488532
+max locked memory           (kbytes, -l) unlimited
+max memory size             (kbytes, -m) 666888192
+open files                          (-n) 131000
+pipe size                (512 bytes, -p) 8
+POSIX message queues         (bytes, -q) 819200
+real-time priority                  (-r) 0
+stack size                  (kbytes, -s) 8192
+cpu time                   (seconds, -t) unlimited
+max user processes                  (-u) 100000
+virtual memory              (kbytes, -v) unlimited
+file locks                          (-x) unlimited
+ELMER SOLVER (v 9.0) STARTED AT: 2026/07/23 16:35:59
+ELMER SOLVER (v 9.0) STARTED AT: 2026/07/23 16:35:59
+ELMER SOLVER (v 9.0) STARTED AT: 2026/07/23 16:35:59
+ParCommInit:  Initialize #PEs:            3
+ParCommInit:  Initialize #PEs:            3
+ParCommInit:  Initialize #PEs:            3
+MAIN: Read 2 integer parameters from command line!
+MAIN: OMP_NUM_THREADS not set. Using only 1 thread per task.
+MAIN: 
+MAIN: =============================================================
+MAIN: ElmerSolver finite element software, Welcome!
+MAIN: This program is free software licensed under (L)GPL
+MAIN: Copyright 1st April 1995 - , CSC - IT Center for Science Ltd.
+MAIN: Webpage http://www.csc.fi/elmer, Email elmeradm@csc.fi
+MAIN: Version: 9.0 (Rev: 9dce9c2ac, Compiled: 2026-07-13)
+MAIN:  Running in parallel using 3 tasks.
+MAIN:  Running with just one thread per task.
+MAIN:  HYPRE library linked in.
+MAIN:  MMG library linked in.
+MAIN:  ParMMG library linked in.
+MAIN:  Lua interpreter linked in.
+MAIN:  Zoltan library linked in.
+MAIN:  AMGX library linked in.
+MAIN: =============================================================
+MAIN: 
+MAIN: 
+MAIN: -------------------------------------
+MAIN: Reading Model: case_gpu_318975.sif
+LoadInputFile: Scanning input file: case_gpu_318975.sif
+LoadInputFile: Scanning only size info
+LoadInputFile: First time visiting
+LoadInputFile: Reading base load of sif file
+OpenIncludeFile: Trying to include file: linsys_318975.sif
+CheckKeyword: Found keyword type assuming suffix 1 for: operator 2
+CheckKeyword: Found keyword type assuming suffix 1 for: operator 2
+CheckKeyword: Found keyword type assuming suffix 1 for: operator 3
+CheckKeyword: Found keyword type assuming suffix 1 for: operator 3
+CheckKeyword: Found keyword type assuming suffix 1 for: operator 4
+CheckKeyword: Found keyword type assuming suffix 1 for: operator 4
+CheckKeyword: Found keyword type assuming suffix 1 for: operator 5
+CheckKeyword: Found keyword type assuming suffix 1 for: operator 5
+LoadInputFile: Loading input file: case_gpu_318975.sif
+LoadInputFile: Reading base load of sif file
+OpenIncludeFile: Trying to include file: linsys_318975.sif
+CheckKeyword:  Unlisted keyword: [amgx config] in section: [solver 1]
+CheckKeyword: Found keyword type assuming suffix 1 for: operator 2
+CheckKeyword: Found keyword type assuming suffix 1 for: operator 2
+CheckKeyword: Found keyword type assuming suffix 1 for: operator 3
+CheckKeyword: Found keyword type assuming suffix 1 for: operator 3
+CheckKeyword: Found keyword type assuming suffix 1 for: operator 4
+CheckKeyword: Found keyword type assuming suffix 1 for: operator 4
+CheckKeyword: Found keyword type assuming suffix 1 for: operator 5
+CheckKeyword: Found keyword type assuming suffix 1 for: operator 5
+CheckKeyword:  Unlisted keyword: [expression 1] in section: [solver 2]
+CheckKeyword:  Unlisted keyword: [line marker] in section: [solver 2]
+LoadInputFile: Number of BCs: 3
+LoadInputFile: Number of Body Forces: 0
+LoadInputFile: Number of Initial Conditions: 0
+LoadInputFile: Number of Materials: 1
+LoadInputFile: Number of Equations: 1
+LoadInputFile: Number of Solvers: 2
+LoadInputFile: Number of Bodies: 1
+ListTagKeywords: Setting weight for keywords!
+ListTagKeywords: No parameters width suffix: normalize by area
+ListTagKeywords: Setting weight for keywords!
+ListTagKeywords: No parameters width suffix: normalize by volume
+Loading user function library: [StressSolve]...[StressSolver_Init0]
+Loading user function library: [SaveData]...[SaveScalars_Init0]
+Loading user function library: [SaveData]...[SaveScalars_Init0]
+LoadMesh: Loading parallel mesh for 3 partitions
+ElmerAsciiMesh: Performing step: 1
+ElmerAsciiMesh: Base mesh name: ./winkel
+ReadHeaderFile: Reading header info from file: ./winkel/partitioning.3/part.1.header
+InitializeMesh: Number of nodes in mesh: 12159
+InitializeMesh: Number of bulk elements in mesh: 10580
+InitializeMesh: Number of boundary elements in mesh: 2438
+InitializeMesh: Initial number of max element nodes: 8
+ElmerAsciiMesh: Performing step: 2
+ReadNodesFile: Reading nodes from file: ./winkel/partitioning.3/part.1.nodes
+SetMeshDimension: Dimension of mesh is: 3
+SetMeshDimension: Max dimension of mesh is: 3
+ElmerAsciiMesh: Performing step: 3
+ReadElementsFile: Reading bulk elements from file: ./winkel/partitioning.3/part.1.elements
+ElmerAsciiMesh: Performing step: 4
+ReadBoundaryFile: Reading boundary elements from file: ./winkel/partitioning.3/part.1.boundary
+PermuteNodeNumbering: Performing node mapping
+MapBodiesAndBCs: Skipping remapping of bodies
+MapBodiesAndBCs: Remapping boundaries
+MapBodiesAndBCs: Minimum initial boundary index: 1
+MapBodiesAndBCs: Maximum initial boundary index: 6
+ElmerAsciiMesh: Performing step: 5
+ReadSharedFile: Reading nodes from file: ./winkel/partitioning.3/part.1.shared
+ElmerAsciiMesh: Performing step: 6
+LoadMesh: Loading mesh done
+NonNodalElements: Element dofs max: 8
+SParFaceNumbering: Elapsed REAL time:     0.0011 (s)
+SParEdgeNumbering: Elapsed REAL time:     0.0000 (s)
+ParallelNonNodalElements: Number of initial nodes: 12159
+ParallelNonNodalElements: Number of initial faces: 0
+ParallelNonNodalElements: Number of initial edges: 0
+ParallelNonNodalElements: Number of shared nodes: 630
+ParallelNonNodalElements: Number of owned shared nodes: 304
+ParallelNonNodal: Elapsed REAL time:     0.0015 (s)
+LoadMesh: Preparing mesh done
+LoadMesh: Elapsed REAL time:     0.0229 (s)
+LoadModel: Creating hierarchy of meshes by mesh multiplication: 4
+LoadModel: Keeping number of meshes: 4
+LoadModel: Performing splitting at level: 2
+SplitMeshEqual: Mesh splitting works for first order elements 303, 404, 504, (706) and 808.
+FindMeshEdges: Determining faces in 3D mesh
+FindMeshFaces3D: Finding mesh faces in 3D mesh
+FindMeshFaces3D: Number of faces found: 33249
+FindMeshEdges: Determining edges in 3D mesh
+FindMeshEdges3D: Finding mesh edges in 3D mesh
+FindMeshEdges3D: Number of edges found: 34827
+SplitMeshEqual: ******** Old mesh ********
+SplitMeshEqual:  Nodes             :        12159
+SplitMeshEqual:  Bulk elements     :        10580
+SplitMeshEqual:  Boundary elements :         2438
+SplitMeshEqual:  Edges             :        34827
+SplitMeshEqual:  Faces             :        33249
+SplitMeshEqual: Added 33249 nodes in the center of faces
+SplitMeshEqual: Added 10580 nodes in the center of bulks
+SplitMeshEqual: Added edge centers to the nodes list.
+SplitMeshEqual: Added face centers to the nodes list.
+SplitMeshEqual: Added quad and brick centers to the nodes list.
+SplitMeshEqual:  Count of new elements :        94392
+SplitMeshEqual: New mesh allocated.
+SplitMeshEqual: Array for bulk elements allocated.
+SplitMeshEqual: ******** New mesh ********
+SplitMeshEqual:  Nodes             :        90815
+SplitMeshEqual:  Bulk elements     :        84640
+SplitMeshEqual:  Boundary elements :         9752
+SplitMeshEqual: Elapsed REAL time:     0.0160 (s)
+SParIterGlobalNumbering:  Numbering seems consistent, advancing...
+ParallelGlobalNumbering: Elapsed REAL time:     0.0282 (s)
+ReleaseMeshFaceTables: Releasing number of faces: 33249
+SetMeshDimension: Dimension of mesh is: 3
+SetMeshDimension: Max dimension of mesh is: 3
+NonNodalElements: Element dofs max: 8
+SParFaceNumbering: Elapsed REAL time:     0.0000 (s)
+SParEdgeNumbering: Elapsed REAL time:     0.0000 (s)
+ParallelNonNodalElements: Number of initial nodes: 90815
+ParallelNonNodalElements: Number of initial faces: 0
+ParallelNonNodalElements: Number of initial edges: 0
+ParallelNonNodalElements: Number of shared nodes: 2419
+ParallelNonNodalElements: Number of owned shared nodes: 2093
+ParallelNonNodal: Elapsed REAL time:     0.0008 (s)
+LoadModel: Performing splitting at level: 3
+SplitMeshEqual: Mesh splitting works for first order elements 303, 404, 504, (706) and 808.
+FindMeshEdges: Determining faces in 3D mesh
+FindMeshFaces3D: Finding mesh faces in 3D mesh
+FindMeshFaces3D: Number of faces found: 259956
+FindMeshEdges: Determining edges in 3D mesh
+FindMeshEdges3D: Finding mesh edges in 3D mesh
+FindMeshEdges3D: Number of edges found: 266130
+SplitMeshEqual: ******** Old mesh ********
+SplitMeshEqual:  Nodes             :        90815
+SplitMeshEqual:  Bulk elements     :        84640
+SplitMeshEqual:  Boundary elements :         9752
+SplitMeshEqual:  Edges             :       266130
+SplitMeshEqual:  Faces             :       259956
+SplitMeshEqual: Added 259956 nodes in the center of faces
+SplitMeshEqual: Added 84640 nodes in the center of bulks
+SplitMeshEqual: Added edge centers to the nodes list.
+SplitMeshEqual: Added face centers to the nodes list.
+SplitMeshEqual: Added quad and brick centers to the nodes list.
+SplitMeshEqual:  Count of new elements :       716128
+SplitMeshEqual: New mesh allocated.
+SplitMeshEqual: Array for bulk elements allocated.
+SplitMeshEqual: ******** New mesh ********
+SplitMeshEqual:  Nodes             :       701541
+SplitMeshEqual:  Bulk elements     :       677120
+SplitMeshEqual:  Boundary elements :        39008
+SplitMeshEqual: Elapsed REAL time:     0.1326 (s)
+SParIterGlobalNumbering:  Numbering seems consistent, advancing...
+ParallelGlobalNumbering: Elapsed REAL time:     0.2125 (s)
+ReleaseMeshFaceTables: Releasing number of faces: 259956
+SetMeshDimension: Dimension of mesh is: 3
+SetMeshDimension: Max dimension of mesh is: 3
+NonNodalElements: Element dofs max: 8
+SParFaceNumbering: Elapsed REAL time:     0.0000 (s)
+SParEdgeNumbering: Elapsed REAL time:     0.0000 (s)
+ParallelNonNodalElements: Number of initial nodes: 701541
+ParallelNonNodalElements: Number of initial faces: 0
+ParallelNonNodalElements: Number of initial edges: 0
+ParallelNonNodalElements: Number of shared nodes: 9477
+ParallelNonNodalElements: Number of owned shared nodes: 9151
+ParallelNonNodal: Elapsed REAL time:     0.0078 (s)
+LoadModel: Performing splitting at level: 4
+SplitMeshEqual: Mesh splitting works for first order elements 303, 404, 504, (706) and 808.
+FindMeshEdges: Determining faces in 3D mesh
+FindMeshFaces3D: Finding mesh faces in 3D mesh
+FindMeshFaces3D: Number of faces found: 2055504
+FindMeshEdges: Determining edges in 3D mesh
+FindMeshEdges3D: Finding mesh edges in 3D mesh
+FindMeshEdges3D: Number of edges found: 2079924
+SplitMeshEqual: ******** Old mesh ********
+SplitMeshEqual:  Nodes             :       701541
+SplitMeshEqual:  Bulk elements     :       677120
+SplitMeshEqual:  Boundary elements :        39008
+SplitMeshEqual:  Edges             :      2079924
+SplitMeshEqual:  Faces             :      2055504
+SplitMeshEqual: Added 2055504 nodes in the center of faces
+SplitMeshEqual: Added 677120 nodes in the center of bulks
+SplitMeshEqual: Added edge centers to the nodes list.
+SplitMeshEqual: Added face centers to the nodes list.
+SplitMeshEqual: Added quad and brick centers to the nodes list.
+SplitMeshEqual:  Count of new elements :      5572992
+SplitMeshEqual: New mesh allocated.
+SplitMeshEqual: Array for bulk elements allocated.
+SplitMeshEqual: ******** New mesh ********
+SplitMeshEqual:  Nodes             :      5514089
+SplitMeshEqual:  Bulk elements     :      5416960
+SplitMeshEqual:  Boundary elements :       156032
+SplitMeshEqual: Elapsed REAL time:     0.9999 (s)
+SParIterGlobalNumbering:  Numbering seems consistent, advancing...
+ParallelGlobalNumbering: Elapsed REAL time:     2.2814 (s)
+ReleaseMeshFaceTables: Releasing number of faces: 2055504
+SetMeshDimension: Dimension of mesh is: 3
+SetMeshDimension: Max dimension of mesh is: 3
+NonNodalElements: Element dofs max: 8
+SParFaceNumbering: Elapsed REAL time:     0.0000 (s)
+SParEdgeNumbering: Elapsed REAL time:     0.0000 (s)
+ParallelNonNodalElements: Number of initial nodes: 5514089
+ParallelNonNodalElements: Number of initial faces: 0
+ParallelNonNodalElements: Number of initial edges: 0
+ParallelNonNodalElements: Number of shared nodes: 37513
+ParallelNonNodalElements: Number of owned shared nodes: 37187
+ParallelNonNodal: Elapsed REAL time:     0.0681 (s)
+MeshStabParams: Computing stabilization parameters
+MeshStabParams: Elapsed REAL time:     0.5224 (s)
+MeshStabParams: Computing stabilization parameters
+MeshStabParams: Elapsed REAL time:     0.0655 (s)
+MeshStabParams: Computing stabilization parameters
+MeshStabParams: Elapsed REAL time:     0.0082 (s)
+MeshStabParams: Computing stabilization parameters
+MeshStabParams: Elapsed REAL time:     0.0011 (s)
+CompleteModelKeywords: Completing keywords for mortars and mechanics!
+MAIN: -------------------------------------
+AddMeshCoordinates: Setting mesh coordinates and time
+VariableAdd: Adding variable > Coordinate 1 < of size 5514089
+VariableAdd: Adding variable > Coordinate 2 < of size 5514089
+VariableAdd: Adding variable > Coordinate 3 < of size 5514089
+VariableAdd: Adding variable > Coordinate 1 < of size 701541
+VariableAdd: Adding variable > Coordinate 2 < of size 701541
+VariableAdd: Adding variable > Coordinate 3 < of size 701541
+VariableAdd: Adding variable > Coordinate 1 < of size 90815
+VariableAdd: Adding variable > Coordinate 2 < of size 90815
+VariableAdd: Adding variable > Coordinate 3 < of size 90815
+VariableAdd: Adding variable > Coordinate 1 < of size 12159
+VariableAdd: Adding variable > Coordinate 2 < of size 12159
+VariableAdd: Adding variable > Coordinate 3 < of size 12159
+AddSolvers: Setting up 2 solvers
+AddSolvers: Setting up solver 1: linelast
+AddEquationBasics: Using procedure: StressSolve StressSolver
+AddEquationBasics: Setting up solver: linelast
+Loading user function library: [StressSolve]...[StressSolver_Init]
+AddEquationBasics: Checking for _init solver
+StressSolve_init: --------------------------------------------------
+StressSolve_init: Solving displacements from linear elasticity model
+StressSolve_init: --------------------------------------------------
+Loading user function library: [StressSolve]...[StressSolver_bulk]
+Loading user function library: [StressSolve]...[StressSolver_bulk]
+AddEquationBasics: Checking for _bulk solver
+Loading user function library: [StressSolve]...[StressSolver]
+AddEquationBasics: Treating variable string: -dofs 3 displacement
+AddEquationBasics: Creating standard variable: displacement
+AddEquationBasics: Computing size of permutation vector
+AddEquationBasics: Maximum size of permutation vector is: 5514089
+AddEquationBasics: Creating solver matrix topology
+CreateMatrix: Creating initial permutation
+CreateMatrix: Creating inverse of initial order of size: 5514089
+CreateMatrix: Creating list matrix for equation: linelast
+MakeListMatrix: Creating list matrix
+OptimizeBandwidth: ---------------------------------------------------------
+OptimizeBandwidth: Computing matrix structure for: linelast
+OptimizeBandwidth: Initial bandwidth for linelast: 5502477
+OptimizeBandwidth: Optimized bandwidth for linelast: 62498
+OptimizeBandwidth: ---------------------------------------------------------
+CreateMatrix: Initializing list matrix for equation
+CRS_CreateMatrix: Creating CRS Matrix of size: 16542267
+CRS_CreateMatrix: Creating CRS Matrix with nofs: 1324158849
+CreateMatrix: Sparse matrix created
+AddEquationBasics: Number of rows in CRS matrix: 16542267
+AddEquationBasics: Creating solver variable
+VariableAdd: Adding variable > displacement < of size 16542267
+VariableAdd: Adding variable > displacement 1 < of size 5514089
+VariableAdd: Adding variable > displacement 2 < of size 5514089
+VariableAdd: Adding variable > displacement 3 < of size 5514089
+SolverInitialization: Elapsed REAL time:    34.4430 (s)
+AddSolvers: Setting up solver 2: savescalars
+AddEquationBasics: Using procedure: SaveData SaveScalars
+AddEquationBasics: Setting up solver: savescalars
+Loading user function library: [SaveData]...[SaveScalars_Init]
+AddEquationBasics: Checking for _init solver
+Loading user function library: [SaveData]...[SaveScalars_bulk]
+Loading user function library: [SaveData]...[SaveScalars_bulk]
+AddEquationBasics: Checking for _bulk solver
+Loading user function library: [SaveData]...[SaveScalars]
+AddEquationBasics: Creating null variable with no name
+AddSolvers: Setting up solvers done
+AddTimeEtc: Setting time and other global variables
+VariableAdd: Adding variable > Time < of size 1
+VariableAdd: Adding variable > Timestep < of size 1
+VariableAdd: Adding variable > Timestep size < of size 1
+VariableAdd: Adding variable > Timestep interval < of size 1
+VariableAdd: Adding variable > nonlin iter < of size 1
+VariableAdd: Adding variable > coupled iter < of size 1
+VariableAdd: Adding variable > Partition < of size 1
+VariableAdd: Adding variable > Time < of size 1
+VariableAdd: Adding variable > Timestep < of size 1
+VariableAdd: Adding variable > Timestep size < of size 1
+VariableAdd: Adding variable > Timestep interval < of size 1
+VariableAdd: Adding variable > nonlin iter < of size 1
+VariableAdd: Adding variable > coupled iter < of size 1
+VariableAdd: Adding variable > Partition < of size 1
+VariableAdd: Adding variable > Time < of size 1
+VariableAdd: Adding variable > Timestep < of size 1
+VariableAdd: Adding variable > Timestep size < of size 1
+VariableAdd: Adding variable > Timestep interval < of size 1
+VariableAdd: Adding variable > nonlin iter < of size 1
+VariableAdd: Adding variable > coupled iter < of size 1
+VariableAdd: Adding variable > Partition < of size 1
+VariableAdd: Adding variable > Time < of size 1
+VariableAdd: Adding variable > Timestep < of size 1
+VariableAdd: Adding variable > Timestep size < of size 1
+VariableAdd: Adding variable > Timestep interval < of size 1
+VariableAdd: Adding variable > nonlin iter < of size 1
+VariableAdd: Adding variable > coupled iter < of size 1
+VariableAdd: Adding variable > Partition < of size 1
+MAIN: Random seed initialized to: 314159265
+SetInitialConditions: Setting up initial conditions (if any)
+MAIN: Number of timesteps to be saved: 1
+MAIN: 
+MAIN: -------------------------------------
+MAIN:  Steady state iteration:            1
+MAIN: -------------------------------------
+MAIN: 
+SolveEquations: Solvers before timestep
+SolveEquations: Solvers in main iteration loop
+SolveEquations: Performing set of solvers in sequence
+ListTagCount: Counting tags for keyword normalization!
+SetActiveElementsTable: Creating active element table for: linelast
+SetActiveElementsTable: Number of active elements found : 5416960
+ParallelInitMatrix: Creating communication structures for matrix!
+List_ToListMatrix: Matrix format changed from CRS to List
+List_ToCRSMatrix: Changing matrix type with number of non-zeros: 1324160433
+List_ToCRSMatrix: Matrix format changed from List to CRS
+SingleSolver: Attempting to call solver: 1
+SingleSolver: Solver Equation string is: linelast
+StressSolve: 
+StressSolve: --------------------------------------------------
+StressSolve: Solving displacements from linear elasticity model
+StressSolve: --------------------------------------------------
+DefaultStart: Starting solver: linelast
+StressSolve: Starting assembly...
+InitializeToZero: Initializing the linear system to zero
+StressSolve: Assembly:
+: ....................  8%
+: .................... 15%
+: .................... 23%
+: .................... 30%
+: .................... 38%
+: .................... 45%
+: .................... 53%
+: .................... 60%
+: .................... 68%
+: .................... 75%
+: .................... 83%
+: .................... 90%
+: .................... 98%
+: ......Finished checking for nodal loads
+SetNodalLoads: Finished checking for nodal loads
+SetNodalLoads: Finished checking for nodal loads
+SetDirichletBoundaries: Number of dofs set for displacement: 0
+DefUtils::DefaultDirichletBCs: Setting Dirichlet boundary conditions
+SetDirichletBoundaries: Number of dofs set for displacement 1: 102400
+DefUtils::DefaultDirichletBCs: p-element condition setup: displacement 1
+SetDirichletBoundaries: Number of dofs set for displacement 2: 102400
+DefUtils::DefaultDirichletBCs: p-element condition setup: displacement 2
+SetDirichletBoundaries: Number of dofs set for displacement 3: 102400
+DefUtils::DefaultDirichletBCs: p-element condition setup: displacement 3
+EnforceDirichletConditions: Enforcing total of 77763 Dirichlet conditions.
+EnforceDirichletConditions: Applying Dirichlet conditions using scaled diagonal
+ScaleLinearSystem: Creating > DiagScaling < vector of size 16542267
+EnforceDirichletConditions: Dirichlet conditions enforced for dofs: 77763
+DefUtils::DefaultDirichletBCs: Dirichlet boundary conditions set
+DefaultSolve: Solving linear system with default routines
+GenerateConstraintMatrix: Nothing to do for now
+SolveSystem: Solving linear system
+SolveSystem: Solving linear system in standard way
+SolveLinearSystem: Assuming real valued linear system
+SolveLinearSystem: Using previously created parallel matrix structures!
+SolveLinearSystem: Assuming parallel linear system
+ScaleLinearSystem: Creating > DiagScaling < vector of size 16542267
+SolveLinearSystem: Parallel linear System Solver: amgx

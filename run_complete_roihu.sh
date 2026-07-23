@@ -3,9 +3,9 @@
 #SBATCH --job-name=run_complete
 #SBATCH --output=logs/%x_%j.out
 #SBATCH --error=logs/%x_%j.err
-#SBATCH --partition=small
+#SBATCH --partition=large
 #SBATCH --account=project_2001659
-#SBATCH --nodes=1
+#SBATCH --nodes=16
 #SBATCH --ntasks-per-node=384
 
 export OMP_NUM_THREADS=1
@@ -32,10 +32,10 @@ CASE_PATH=Navier/WinkelStructured
 SCRIPT_PATH=python-scripts
 
 # Define the problem type
-PROBLEM=Navier-short
+PROBLEM=Navier-roihu
 
 # Define the mesh levels to loop over
-MESH_LEVELS=(1 2 3)
+MESH_LEVELS=(4)
 
 # Define the format in which figures should be saved
 FORMAT=png
@@ -80,6 +80,15 @@ rm -f $CASE_PATH/results/f$PARTITIONS.*
 
 ORG_DIR=$PWD
 
+# Job-specific filenames so a concurrently-running job that shares this same
+# case directory (e.g. the AMGX sweep) can't clobber this job's linsys.sif /
+# case file while both are in flight.
+JOB_TAG=${SLURM_JOB_ID:-$$}
+LINSYS_FILE=linsys_$JOB_TAG.sif
+CASE_FILE=case_cpu_$JOB_TAG.sif
+
+trap 'rm -f "$CASE_PATH/$LINSYS_FILE" "$CASE_PATH/$CASE_FILE"' EXIT
+
 
 ###################### RUN THE SCRIPTS #######################
 
@@ -117,23 +126,29 @@ for mesh_level in "${MESH_LEVELS[@]}"; do
 	if grep -Fxq "$solver" solver-lists/$PROBLEM-Solvers.txt
 	then
 
-	    cp $solver $CASE_PATH/linsys.sif
+	    cp $solver $CASE_PATH/$LINSYS_FILE
+	    sed "s/include linsys\.sif/include $LINSYS_FILE/" $CASE_PATH/case_cpu.sif > $CASE_PATH/$CASE_FILE
             cd $CASE_PATH
 
-            echo 
-            echo 
+            echo
+            echo
 	    echo "-----------------------------------"
             echo "Starting $solver with mesh level $mesh_level"
             echo
 
             start=$(date +%s)
-    
-            srun ElmerSolver case_cpu.sif -ipar 2 $mesh_level $PARTITIONS
+
+            srun ElmerSolver $CASE_FILE -ipar 2 $mesh_level $PARTITIONS
+            status=$?
 
             end=$(date +%s)
 
    	    echo
-            echo "Ending $solver with mesh level $mesh_level"
+	    if [ $status -ne 0 ]; then
+		echo "FAILED $solver with mesh level $mesh_level (srun exit code $status)"
+	    else
+		echo "Ending $solver with mesh level $mesh_level"
+	    fi
             echo "Elapsed time: $(($end-$start)) s"
             echo "-----------------------------------"
             echo

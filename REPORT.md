@@ -181,9 +181,43 @@ ptr:        0x62e9b0000 size: 4096
 ptr:        0x62e943000 size: 118784
 ptr:        0x62e960000 size: 118784
 
+### Mesh Level 4 solvers failing
+
+Both solvers
+
+linsysAMGX/amgx_cg_dilu.sif
+linsysAMGX/amgx_bicgstab_none.sif
+
+fail with (1GPU)  logs/amgx_all_318865.err
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+#0  0xffffb4af07e7 in ???
+#1  0xffffae3fe2a0 in __elementutils_MOD_initializematrix._omp_fn.0
+	at /opt/src/elmerfem/fem/src/ElementUtils.F90:1709
+#2  0xffff75e18953 in GOMP_parallel
+	at /appltest/soft/spack/core/v2026_03/core_cache_dir/stage/r_inst_core/spack-stage-gcc-14.3.0-mwml3gfk4d3issqhvwxlt3oo2yaormhk/spack-src/libgomp/parallel.c:178
+#3  0xffffae408df3 in __elementutils_MOD_initializematrix
+	at /opt/src/elmerfem/fem/src/ElementUtils.F90:1696
+#4  0xffffae40e6e7 in __elementutils_MOD_creatematrix
+	at /opt/src/elmerfem/fem/src/ElementUtils.F90:2063
+#5  0xffffae4cb9af in __mainutils_MOD_addequationbasics
+	at /opt/src/elmerfem/fem/src/MainUtils.F90:1617
+#6  0xffffae706243 in addsolvers
+	at /opt/src/elmerfem/fem/src/ElmerSolver.F90:1629
+#7  0xffffae715b4f in elmersolver_
+	at /opt/src/elmerfem/fem/src/ElmerSolver.F90:499
+#8  0x401387 in solver
+	at /opt/src/elmerfem/fem/src/Solver.F90:57
+#9  0x4010e3 in main
+	at /opt/src/elmerfem/fem/src/Solver.F90:34
+srun: error: rg2101: task 0: Segmentation fault
+srun: Terminating StepId=318865.3
 
 
+Multi GPUs logs/amgx_all_318975.err
 
-
-
-
+[rg2101:981141] pml_ucx.c:806  Error: bsend: failed to allocate buffer
+[rg2101:981141] pml_ucx.c:962  Error: ucx send failed: No pending message
+[2026-07-23T16:48:45.613] error: *** STEP 318975.3 ON rg2101 CANCELLED AT 2026-07-23T16:48:45 DUE to SIGNAL Killed ***

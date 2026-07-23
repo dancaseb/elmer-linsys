@@ -1,0 +1,6 @@
+[rg2101:981141] pml_ucx.c:806  Error: bsend: failed to allocate buffer
+[rg2101:981141] pml_ucx.c:962  Error: ucx send failed: No pending message
+[2026-07-23T16:48:45.613] error: *** STEP 318975.3 ON rg2101 CANCELLED AT 2026-07-23T16:48:45 DUE to SIGNAL Killed ***
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+srun: error: rg2101: tasks 0-2: Killed
+srun: Terminating StepId=318975.3
