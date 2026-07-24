@@ -183,41 +183,94 @@ ptr:        0x62e960000 size: 118784
 
 ### Mesh Level 4 solvers failing
 
-Both solvers
+All AMGX solvers tested (`amgx_bicgstab_none`, `amgx_cg_dilu`) crash at mesh level 4
+(Navier/WinkelStructured), right as the matrix is handed to AMGX:
 
-linsysAMGX/amgx_cg_dilu.sif
-linsysAMGX/amgx_bicgstab_none.sif
+```
+SolveLinearSystem: Parallel linear System Solver: amgx
+pml_ucx.c:806  Error: bsend: failed to allocate buffer
+pml_ucx.c:962  Error: ucx send failed: No pending message
+srun: error: ...: Killed
+```
+Logs: logs/amgx_all_{315436,315588,318069,318221,318689,318975}.err
 
-fail with (1GPU)  logs/amgx_all_318865.err
+Ruled out:
+- Host RAM / GPU memory ceilings — host never exceeds ~287/858GB, GPU HBM stays at
+  0-4MB the whole run (nothing ever reaches the device). See logs/mem_poll_*.csv.
+- `UCX_RNDV_THRESH=0` (eager vs. rendezvous protocol) — no effect (job 318069).
+- ulimits (`-l` locked mem, `-v` virtual mem) — unlimited, host and in-container match
+  (job 318221).
+- Per-rank chunk size — tested 3/4/8 ranks, all crash identically. Time-to-crash
+  scales *inversely* with rank count (3 ranks: 12m46s, 4: 7m55s, 8: 4m19s), pointing
+  at a fixed-size buffered-send resource exhausted by rank/connection count, not
+  data volume.
 
-Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+Separate bug at **1 rank**: mesh level 4 segfaults earlier with a 32-bit nnz overflow
+(`nofs: -294966967`) in `CreateMatrix`/`InitializeMatrix` (logs/amgx_all_318865.err).
+Per-rank mesh multiplication means 1 rank ends up holding the entire ~50M-row/~4B-nonzero
+global problem, overflowing Elmer's 32-bit nnz counter. Avoid 1-2 rank tests at mesh
+level 4 for this reason.
 
-Backtrace for this error:
-#0  0xffffb4af07e7 in ???
-#1  0xffffae3fe2a0 in __elementutils_MOD_initializematrix._omp_fn.0
-	at /opt/src/elmerfem/fem/src/ElementUtils.F90:1709
-#2  0xffff75e18953 in GOMP_parallel
-	at /appltest/soft/spack/core/v2026_03/core_cache_dir/stage/r_inst_core/spack-stage-gcc-14.3.0-mwml3gfk4d3issqhvwxlt3oo2yaormhk/spack-src/libgomp/parallel.c:178
-#3  0xffffae408df3 in __elementutils_MOD_initializematrix
-	at /opt/src/elmerfem/fem/src/ElementUtils.F90:1696
-#4  0xffffae40e6e7 in __elementutils_MOD_creatematrix
-	at /opt/src/elmerfem/fem/src/ElementUtils.F90:2063
-#5  0xffffae4cb9af in __mainutils_MOD_addequationbasics
-	at /opt/src/elmerfem/fem/src/MainUtils.F90:1617
-#6  0xffffae706243 in addsolvers
-	at /opt/src/elmerfem/fem/src/ElmerSolver.F90:1629
-#7  0xffffae715b4f in elmersolver_
-	at /opt/src/elmerfem/fem/src/ElmerSolver.F90:499
-#8  0x401387 in solver
-	at /opt/src/elmerfem/fem/src/Solver.F90:57
-#9  0x4010e3 in main
-	at /opt/src/elmerfem/fem/src/Solver.F90:34
-srun: error: rg2101: task 0: Segmentation fault
-srun: Terminating StepId=318865.3
+Conclusion: likely a bug/hard limit in Elmer's AMGX interface (or its internal MPI
+matrix-redistribution), independent of memory/UCX/ulimit tuning. Next: report upstream
+(CSC support / Elmer or AMGX issue tracker) with the above.
+
+ Title: Fix MPI_BSEND buffer overflow in AMGXSolver's matrix collection step
+
+  ---
+  Summary
+
+  Running the AMGX linear solver on sufficiently large parallel problems (e.g. Navier/elasticity mesh level 4 on 3, 4, or 8 MPI ranks) reliably crashes right as the matrix is handed off to AMGX:
+
+  SolveLinearSystem: Parallel linear System Solver: amgx
+  [pml_ucx.c:806]  Error: bsend: failed to allocate buffer
+  [pml_ucx.c:962]  Error: ucx send failed: No pending message
+  srun: error: ...: Killed
+
+  The crash is independent of total available memory (host RAM and GPU memory both had large amounts of headroom in every failing run) and independent of rank count — 3, 4, and 8 ranks all fail identically, with time-to-crash scaling inversely with rank count.
+  
+  Root cause
+
+  AMGXSolver (fem/src/SolveCore.F90) builds a "collection matrix" for AMGX by having each rank ship its non-locally-owned rows (column indices + values) to their owning rank via raw MPI_BSEND, one row at a time:
+
+  DO i=1,ParEnV % PEs
+    IF(i-1==me .OR. .NOT. ParEnv % IsNeighbour(i)) CYCLE
+    CALL MPI_BSEND(SendTo(i),1,MPI_INTEGER,i-1,1200,ELMER_COMM_WORLD, ierr)
+    ...
+    DO j=1,SendTo(i)
+      CALL MPI_BSEND(APerm(A % Cols(...)),SendStuff(i) % Size(j),MPI_INTEGER,i-1,1203,...)
+      CALL MPI_BSEND(A % Values(...),SendStuff(i) % Size(j),MPI_DOUBLE_PRECISION,i-1,1204,...)
+    END DO
+  END DO
+      
+  MPI_BSEND requires the application to pre-attach a large-enough buffer via MPI_BUFFER_ATTACH. Every other MPI_BSEND call site in the codebase (VankaCreate.F90, SParIterComm.F90, MeshPartition.F90, MeshBasics.F90, ParticleUtils.F90, InterpVarToVar.F90, SolverBasics.F90, and even the structurally-analogous ROCSolver matrix-collection loop ~150 lines below this one in the same file) calls the codebase's CheckBuffer(n) helper
+  right before issuing its bsends, to attach a buffer sized for what's about to be sent. This one call site never does. It relies entirely on whatever buffer happens to be attached from some earlier, unrelated CheckBuffer call — sized for that call's much smaller needs. Once the redistribution volume at large mesh sizes exceeds that stale buffer, Open MPI's UCX PML fails exactly as observed.
+
+  Fix
+
+  Add a CheckBuffer call sized for this loop's actual traffic, following the same idiom used everywhere else in the codebase:
+
+  totcnt = SUM(SendTo)
+  totnnz = 0
+  DO i=1,ParEnV % PEs
+    IF(i-1==me .OR. .NOT. ParEnv % IsNeighbour(i)) CYCLE
+    IF(SendTo(i)>0) totnnz = totnnz + SUM(SendStuff(i) % Size)
+  END DO
+  CALL CheckBuffer( ParEnv % PEs*(1+MPI_BSEND_OVERHEAD) + 2*totcnt + 3*totnnz + &
+             (3*COUNT(SendTo/=0) + 2*totcnt)*MPI_BSEND_OVERHEAD )
+
+  totcnt = total non-local rows being sent, totnnz = their total nonzero count. Byte accounting matches the codebase's convention (CheckBuffer internally multiplies its argument by 4, so callers pass byte-estimates pre-divided by 4).
+             
+  Testing    
+
+  - Not yet compile-tested in this environment (no Fortran toolchain available here) — needs a build in the actual cluster/container environment before merge.
+  - The bug was reproduced identically across three independent configurations (3, 4, and 8 MPI ranks, Navier/WinkelStructured mesh level 4, amgx_bicgstab_none/amgx_cg_dilu solvers) with memory profiling ruling out host RAM, GPU memory, UCX_RNDV_THRESH, and ulimits as the cause in each case.
+  - Note: a separate, unrelated bug exists at 1 rank (32-bit integer overflow in CRS_CreateMatrix, fem/src/CRSMatrix.F90, when the whole mesh-level-4 problem — ~4B nonzeros — is held by a single rank). Not addressed by this PR.
 
 
-Multi GPUs logs/amgx_all_318975.err
 
-[rg2101:981141] pml_ucx.c:806  Error: bsend: failed to allocate buffer
-[rg2101:981141] pml_ucx.c:962  Error: ucx send failed: No pending message
-[2026-07-23T16:48:45.613] error: *** STEP 318975.3 ON rg2101 CANCELLED AT 2026-07-23T16:48:45 DUE to SIGNAL Killed ***
+
+
+
+### GPU container
+On roihu-gpu partition, the recommended way of running Elmer is via containers. The container and build script for it is included in this repo.

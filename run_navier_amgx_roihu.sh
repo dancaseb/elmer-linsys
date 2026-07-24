@@ -6,18 +6,13 @@
 #SBATCH --partition=gputest
 #SBATCH --nodes=1
 #SBATCH --time=00:15:00
-#SBATCH --ntasks-per-node=3 --cpus-per-task=72  # The product should be 72 if requesting 1 GPU per node
-#SBATCH --gres=gpu:gh200:3
+#SBATCH --ntasks-per-node=4 --cpus-per-task=72  # The product should be 72 if requesting 1 GPU per node
+#SBATCH --gres=gpu:gh200:4
 #SBATCH --mem=0
 
 
 set -euo pipefail
 
-# Force UCX to use the rendezvous (zero-copy/RDMA) protocol for all message
-# sizes instead of the eager/buffered path, to test whether the buffered-send
-# pool exhaustion seen during the AMGX matrix handoff at mesh level 4
-# (pml_ucx.c "bsend: failed to allocate buffer") is caused by that path.
-export UCX_RNDV_THRESH=0
 
 # export OMP_NUM_THREADS=32
 
@@ -32,7 +27,7 @@ partitions=$SLURM_NTASKS
 result_file=$partitions
 
 
-container_path=/scratch/project_2001659/danieree/containers/container.sif
+container_path=/scratch/project_2001659/danieree/elmer-linsys/containers/container.sif
 
 # Job-specific filenames so a concurrently-running job that shares this same
 # case directory (e.g. the CPU sweep) can't clobber this job's linsys.sif /
