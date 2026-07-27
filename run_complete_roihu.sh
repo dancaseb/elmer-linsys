@@ -70,7 +70,7 @@ TOL=0.000001
 VIZ_TOT_TIME=false
 
 # Remove the result files if they already exist
-rm -f $CASE_PATH/results/f$PARTITIONS.*
+# rm -f $CASE_PATH/results/f$PARTITIONS.*
 
 # Copy the valid case file into the case.sif file
 # This can be commented out if there is only a single
@@ -188,8 +188,13 @@ echo
 cd $SCRIPT_PATH
 
 # Copy the result files for easier access. 
-# Do NOT copy if you set "Post File" in the sif (creates number of files equal to number of partitions)
-cp -r $RET_PATH $SCALE_PATH/
+cp $RET_PATH/$RET_FILE $SCALE_PATH/
+cp $RET_PATH/$RET_FILE.marker $SCALE_PATH/
+cp $RET_PATH/$RET_FILE.names $SCALE_PATH/
+
+# Copy the slurm log files (paths follow the --output/--error patterns above)
+cp $ORG_DIR/logs/${SLURM_JOB_NAME}_${SLURM_JOB_ID}.out $SCALE_PATH/
+cp $ORG_DIR/logs/${SLURM_JOB_NAME}_${SLURM_JOB_ID}.err $SCALE_PATH/
 
 for mesh_level in "${MESH_LEVELS[@]}"; do
     

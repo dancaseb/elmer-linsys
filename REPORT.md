@@ -165,6 +165,7 @@ Elapsed time: 6 s
 
 ### Memory leaks
 When ran with multi-GPUs on one node:
+
 !!! detected some memory leaks in the code: trying to free non-empty temporary device pool !!!
 ptr:        0x62d202000 size: 4096
 ptr:        0x62d203000 size: 24576
@@ -269,8 +270,16 @@ matrix-redistribution), independent of memory/UCX/ulimit tuning. Next: report up
 
 
 
+### OMP_NUM_THREADS
+results_2026/roihu/Navier-AMGX-WinkelStructured/Navier-AMGX-WinkelStructured-4 (OMP_NUM_THREADS=1)
+results_2026/roihu/Navier-AMGX-WinkelStructured/Navier-AMGX-WinkelStructured-4-1 (OMP_NUM_THREADS=72)
+results_2026/roihu/Navier-AMGX-WinkelStructured/Navier-AMGX-WinkelStructured-4-2 (OMP_NUM_THREADS=72, export OMP_PROC_BIND=spread, export OMP_PLACES=cores)
+
+The tests show, that Elmer can't utilize 72 cores (the times in the graphics are total CPU time). 
+
+TODO check what actually gets plotted in the graph
 
 
 
 ### GPU container
-On roihu-gpu partition, the recommended way of running Elmer is via containers. The container and build script for it is included in this repo.
+On roihu-gpu partition, the recommended way of running Elmer is via containers (for testing). The container and build script for it is included in this repo.

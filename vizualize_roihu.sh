@@ -18,13 +18,13 @@ SCRIPT_PATH=python-scripts
 # PROBLEM=Navier
 
 #number of partitions used in the gpu run
-PARTITIONS=4
+PARTITIONS=8
 FORMAT=png
-MESH_LEVELS=(3)
+MESH_LEVELS=(4)
 
 # Define the name and location where the scalability plot should be saved
 SCALE_NAME=scalability_test
-SCALE_PATH=$PWD/results/roihu/Navier-AMGX-WinkelStructured
+SCALE_PATH=$PWD/results/roihu/Navier-AMGX-WinkelStructured-$PARTITIONS
 # SCALE_PATH=$PWD/results/roihu/Poisson-AMGX-WinkelUnstructured
 
 # Define the name and location where the timing plots should be saved
@@ -67,7 +67,7 @@ echo
 
 save_as=$SCALE_PATH/$SCALE_NAME.$FORMAT
 
-python3 plot_scalability_bar.py -p $RET_PATH -f $RET_FILE -s $save_as -t $TOL
+# python3 plot_scalability_bar.py -p $RET_PATH -f $RET_FILE -s $save_as -t $TOL
 
 cd $ORG_DIR
 
@@ -75,6 +75,14 @@ echo "Plotting timings..."
 echo
 
 cd $SCRIPT_PATH
+# Copy the result files for easier access. 
+cp $RET_PATH/$RET_FILE $SCALE_PATH/
+cp $RET_PATH/$RET_FILE.marker $SCALE_PATH/
+cp $RET_PATH/$RET_FILE.names $SCALE_PATH/
+
+# # Copy the slurm log files (paths follow the --output/--error patterns above)
+# cp $ORG_DIR/logs/${SLURM_JOB_NAME}_${SLURM_JOB_ID}.out $SCALE_PATH/
+# cp $ORG_DIR/logs/${SLURM_JOB_NAME}_${SLURM_JOB_ID}.err $SCALE_PATH/
 
 for mesh_level in "${MESH_LEVELS[@]}"; do
     
@@ -85,7 +93,7 @@ for mesh_level in "${MESH_LEVELS[@]}"; do
     save_as=$TIME_PATH/$TIME_NAME-$mesh_level.$FORMAT
 
     if $VIZ_TOT_TIME; then
-	python3 plot_times.py -p $RET_PATH -f $RET_FILE -s $save_as -t $TOL -m $mesh_level -v
+	python3 plot_times.py -p $RET_PATH -f $RET_FILE -s $save_as -t $TOL -m $mesh_level
     else
 	python3 plot_times.py -p $RET_PATH -f $RET_FILE -s $save_as -t $TOL -m $mesh_level
     fi

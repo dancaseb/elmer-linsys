@@ -1,10 +1,10 @@
-hypre: bicgstab + parasails
-Metadata for SaveScalars file: results_cpu/f1536.dat
+amgx-cg_dilu
+Metadata for SaveScalars file: results_amgx/f4.dat
 Elmer version: 26.2
-Elmer revision: a19504ac5
-Elmer compilation date: 2026-06-16
-Solver input file: case_cpu_318420.sif
-File started at: 2026/07/23 15:58:48
+Elmer revision: 621b04143
+Elmer compilation date: 2026-07-24
+Solver input file: case_gpu_356588.sif
+File started at: 2026/07/27 15:58:06
  
 Variables in columns of matrix: 
    1: Line Marker
