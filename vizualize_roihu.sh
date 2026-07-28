@@ -18,9 +18,9 @@ SCRIPT_PATH=python-scripts
 # PROBLEM=Navier
 
 #number of partitions used in the gpu run
-PARTITIONS=8
+PARTITIONS=4
 FORMAT=png
-MESH_LEVELS=(4)
+MESH_LEVELS=(3)
 
 # Define the name and location where the scalability plot should be saved
 SCALE_NAME=scalability_test
@@ -75,7 +75,7 @@ echo "Plotting timings..."
 echo
 
 cd $SCRIPT_PATH
-# Copy the result files for easier access. 
+# Copy the result files for easier access.
 cp $RET_PATH/$RET_FILE $SCALE_PATH/
 cp $RET_PATH/$RET_FILE.marker $SCALE_PATH/
 cp $RET_PATH/$RET_FILE.names $SCALE_PATH/
@@ -84,22 +84,51 @@ cp $RET_PATH/$RET_FILE.names $SCALE_PATH/
 # cp $ORG_DIR/logs/${SLURM_JOB_NAME}_${SLURM_JOB_ID}.out $SCALE_PATH/
 # cp $ORG_DIR/logs/${SLURM_JOB_NAME}_${SLURM_JOB_ID}.err $SCALE_PATH/
 
-for mesh_level in "${MESH_LEVELS[@]}"; do
-    
-    echo "-----------------------------------"
-    echo "Plotting timings with mesh level $mesh_level"
-    echo
-    
-    save_as=$TIME_PATH/$TIME_NAME-$mesh_level.$FORMAT
+# Discover which OMP thread counts are actually present in RET_FILE's
+# "expression 2" column (written by case_gpu.sif). Older result files
+# without that column yield an empty list, and the loop below then just
+# plots without filtering on thread count.
+THREADS_LIST=$(python3 - <<PYEOF
+import pandas as pd
+from tools.tools import read_names
 
-    if $VIZ_TOT_TIME; then
-	python3 plot_times.py -p $RET_PATH -f $RET_FILE -s $save_as -t $TOL -m $mesh_level
-    else
-	python3 plot_times.py -p $RET_PATH -f $RET_FILE -s $save_as -t $TOL -m $mesh_level
-    fi
-    
-    echo "------------------------------------"
-    echo
+dat_file = "$RET_PATH/$RET_FILE"
+cols = read_names(dat_file)
+matches = [c for c in cols if "expression 2" in c]
+if matches:
+    idx = cols.index(matches[0])
+    data = pd.read_table(dat_file, sep=r"\s+", header=None)
+    print(" ".join(str(int(v)) for v in sorted(data[idx].unique())))
+PYEOF
+)
+
+for mesh_level in "${MESH_LEVELS[@]}"; do
+
+    for threads in ${THREADS_LIST:-_all_}; do
+
+        echo "-----------------------------------"
+
+        if [ "$threads" = "_all_" ]; then
+            echo "Plotting timings with mesh level $mesh_level"
+            th_arg=""
+            save_as=$TIME_PATH/$TIME_NAME-$mesh_level.$FORMAT
+        else
+            echo "Plotting timings with mesh level $mesh_level, $threads threads"
+            th_arg="-th $threads"
+            save_as=$TIME_PATH/$TIME_NAME-$mesh_level-t$threads.$FORMAT
+        fi
+        echo
+
+        if $VIZ_TOT_TIME; then
+            python3 plot_times.py -p $RET_PATH -f $RET_FILE -s $save_as -t $TOL -m $mesh_level  $th_arg
+        else
+            python3 plot_times.py -p $RET_PATH -f $RET_FILE -s $save_as -t $TOL -m $mesh_level $th_arg
+        fi
+
+        echo "------------------------------------"
+        echo
+
+    done
 
 done
 

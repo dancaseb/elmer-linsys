@@ -16,6 +16,8 @@ The optional passable cmd args
    4. -m (--mesh_level) for choosing the wanted mesh level if selected file contains multiple
    5. -s (--save_as) for defining the filename as which the figure will be saved. If not passed the figure will be visualized
    6. -t (--tolerance) for defining the tolerance used in float mode and numpy.isclose
+   7. -th (--threads) for choosing the wanted OMP thread count if selected file contains multiple
+      (only applies to files that record an "expression 2" column; ignored otherwise)
 
 Note it is not recommended to plot total times as well if file contains results for a large number of solvers
 as the figure will get very crowded
@@ -38,6 +40,7 @@ tot_time_col = "value: cpu time"  # Total time
 norm_col = "norm"  # The norm of interest
 partition_col = "partitions"  # The number of partitions used
 mesh_level_col = "expression 1"  # The used mesh level
+threads_col = "expression 2"  # The number of OMP threads used (absent in older result files)
 dof_col = "dofs"  # The number of degrees of freedom
 
 # Predefine this if P-multigrid was used. Ignore otherwise
@@ -53,20 +56,22 @@ tolerance = 10 ** (-6)
 # (in this case WinkelStructed/results)
 org_cwd = os.getcwd()
 cwd_arr = os.getcwd().split('/')
-cwd_arr[-1] = "Poisson/WinkelUnstructured/results"
+# cwd_arr[-1] = "Poisson/WinkelUnstructured/results"
+cwd_arr[-1] = "Navier/WinkelStructured/results_cpu"
 os.chdir('/'.join(cwd_arr))
 
 #################################################
 
 
 def main():
-    global time_col, norm_col, partition_col, mesh_level_col, tot_time_col, dof_col, p_level_col
+    global time_col, norm_col, partition_col, mesh_level_col, threads_col, tot_time_col, dof_col, p_level_col
     global dat_filename, viz_total_time, tolerance
-    
+
     mesh_level = None  # Specifies the mesh level of which results are plotted
+    threads = None  # Specifies the OMP thread count of which results are plotted
     viz_total_time = None  # Flag telling if total times should be plotted as well
     save_as = None  # Path to where the figure should be saved
-    
+
     if len(sys.argv) > 1:
         args = parse_cmd()
 
@@ -78,6 +83,9 @@ def main():
 
         if args['mesh_level'] is not None:
             mesh_level = float(args['mesh_level'])
+
+        if args['threads'] is not None:
+            threads = float(args['threads'])
 
         if args['tolerance'] is not None:
             tolerance = args['tolerance']
@@ -99,6 +107,12 @@ def main():
     mesh_level_col = [s for s in column_names if mesh_level_col in s][0]
     dof_col = [s for s in column_names if dof_col in s][0]
 
+    # Older result files don't have a thread-count column
+    try:
+        threads_col = [s for s in column_names if threads_col in s][0]
+    except IndexError:
+        threads_col = None
+
     data.columns = column_names
     data['Solver'] = solvers
 
@@ -118,6 +132,12 @@ def main():
         mesh_level = data[mesh_level_col].mode()[0]
 
     data = data[data[mesh_level_col] == float(mesh_level)]
+
+    # Same as above, but for OMP thread count (only if the file has that column)
+    if threads_col is not None:
+        if threads is None:
+            threads = data[threads_col].mode()[0]
+        data = data[data[threads_col] == float(threads)]
 
     dofs = data[dof_col].iloc[0]
 
@@ -156,7 +176,10 @@ def main():
     ax.set_yticks(y_axis, solvers)
     ax.set_ylabel("Solver")
     ax.set_xlabel("Time (s)")
-    ax.set_title(f"Runtimes for {'-'.join(os.getcwd().split('/')[-3:-1])} with DOFs: {dofs} ({data[partition_col].iloc[0]} partitions)")
+    title = f"Runtimes for {'-'.join(os.getcwd().split('/')[-3:-1])} with DOFs: {dofs} ({data[partition_col].iloc[0]} partitions)"
+    if threads_col is not None:
+        title += f", {int(data[threads_col].iloc[0])} threads"
+    ax.set_title(title)
     ax.legend(loc='lower right')
 
     plt.tight_layout()

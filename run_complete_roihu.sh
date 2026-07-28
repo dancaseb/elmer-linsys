@@ -35,7 +35,7 @@ SCRIPT_PATH=python-scripts
 PROBLEM=Navier-roihu
 
 # Define the mesh levels to loop over
-MESH_LEVELS=(4)
+MESH_LEVELS=(3)
 
 # Define the format in which figures should be saved
 FORMAT=png

@@ -3,18 +3,19 @@
 #SBATCH --account=project_2001659
 #SBATCH --output=%x_%j.out
 #SBATCH --error=%x_%j.err
-#SBATCH --partition=gputest
-#SBATCH --nodes=1
-#SBATCH --time=00:15:00
-#SBATCH --ntasks-per-node=4 --cpus-per-task=72  # The product should be 72 if requesting 1 GPU per node
+#SBATCH --partition=gpularge
+#SBATCH --nodes=2
+#SBATCH --time=00:30:00
+#SBATCH --ntasks-per-node=4 --cpus-per-task=1 # The product should be 72 if requesting 1 GPU per node
 #SBATCH --gres=gpu:gh200:4
 #SBATCH --mem=0
 
 
 set -euo pipefail
 
+#More threads don't really increase performance
+export OMP_NUM_THREADS=1
 
-# export OMP_NUM_THREADS=32
 
 # Define the path to the case folder
 path=Navier/WinkelStructured
@@ -24,6 +25,7 @@ problem=NavierAMGX
 
 # Define the number of partitions (should be nodes * ntasks-per-node)
 partitions=$SLURM_NTASKS
+threads=$SLURM_CPUS_PER_TASK
 result_file=$partitions
 
 
@@ -43,25 +45,25 @@ CASE_FILE=case_gpu_$JOB_TAG.sif
 
 # Background host RAM + per-GPU memory poller, sampled every 2s for the
 # whole job so usage around a crash can be checked after the fact.
-MEM_LOG="$ORG_DIR/logs/mem_poll_$JOB_TAG.csv"
-mkdir -p "$ORG_DIR/logs"
-{
-    echo "timestamp,host_used_MB,host_total_MB,gpu_index,gpu_used_MB,gpu_total_MB"
-    while true; do
-        ts=$(date +%s)
-        read -r used total < <(free -m | awk '/Mem:/{print $3, $2}')
-        nvidia-smi --query-gpu=index,memory.used,memory.total --format=csv,noheader,nounits \
-            | while IFS=', ' read -r idx gused gtotal; do
-                echo "$ts,$used,$total,$idx,$gused,$gtotal"
-              done
-        sleep 2
-    done
-} > "$MEM_LOG" &
-MONITOR_PID=$!
-trap 'kill $MONITOR_PID 2>/dev/null; rm -f "$ORG_DIR/$path/$LINSYS_FILE" "$ORG_DIR/$path/$CONFIG_FILE" "$ORG_DIR/$path/$CASE_FILE"' EXIT
+# MEM_LOG="$ORG_DIR/logs/mem_poll_$JOB_TAG.csv"
+# mkdir -p "$ORG_DIR/logs"
+# {
+#     echo "timestamp,host_used_MB,host_total_MB,gpu_index,gpu_used_MB,gpu_total_MB"
+#     while true; do
+#         ts=$(date +%s)
+#         read -r used total < <(free -m | awk '/Mem:/{print $3, $2}')
+#         nvidia-smi --query-gpu=index,memory.used,memory.total --format=csv,noheader,nounits \
+#             | while IFS=', ' read -r idx gused gtotal; do
+#                 echo "$ts,$used,$total,$idx,$gused,$gtotal"
+#               done
+#         sleep 2
+#     done
+# } > "$MEM_LOG" &
+# MONITOR_PID=$!
+# trap 'kill $MONITOR_PID 2>/dev/null; rm -f "$ORG_DIR/$path/$LINSYS_FILE" "$ORG_DIR/$path/$CONFIG_FILE" "$ORG_DIR/$path/$CASE_FILE"' EXIT
 
 # Remove the result files if they already exist
-rm -f $path/results_amgx/f$result_file.*
+# rm -f $path/results_amgx/f$result_file.*
 
 # Copy the valid case file into the case.sif file
 # This can be commented out if there is only a single
@@ -105,16 +107,16 @@ for mesh_level in 4; do
             echo "Starting $solver with mesh level $mesh_level"
             echo
 
-            echo "Diagnostic: UCX_RNDV_THRESH as seen inside the container:"
-            srun apptainer exec --nv --bind="$(csc-common-bind)" $container_path env | grep UCX_RNDV_THRESH || echo "  (not set inside container)"
+            # echo "Diagnostic: UCX_RNDV_THRESH as seen inside the container:"
+            # srun apptainer exec --nv --bind="$(csc-common-bind)" $container_path env | grep UCX_RNDV_THRESH || echo "  (not set inside container)"
 
-            echo "Diagnostic: ulimits on the host (compute node, outside container):"
-            ulimit -a
+            # echo "Diagnostic: ulimits on the host (compute node, outside container):"
+            # ulimit -a
 
-            echo "Diagnostic: ulimits as seen inside the container (per task):"
-            srun apptainer exec --nv --bind="$(csc-common-bind)" $container_path bash -c 'ulimit -a'
+            # echo "Diagnostic: ulimits as seen inside the container (per task):"
+            # srun apptainer exec --nv --bind="$(csc-common-bind)" $container_path bash -c 'ulimit -a'
 
-            srun apptainer run --nv --bind="$(csc-common-bind)" $container_path ElmerSolver $CASE_FILE -ipar 2 $mesh_level $result_file
+            srun --cpus-per-task=$threads apptainer run --nv --bind="$(csc-common-bind)" $container_path ElmerSolver $CASE_FILE -ipar 3 $mesh_level $result_file $threads
 
 
             end=$(date +%s)
