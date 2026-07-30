@@ -5,7 +5,7 @@
 #SBATCH --error=%x_%j.err
 #SBATCH --partition=gpularge
 #SBATCH --nodes=2
-#SBATCH --time=00:30:00
+#SBATCH --time=00:45:00
 #SBATCH --ntasks-per-node=4 --cpus-per-task=1 # The product should be 72 if requesting 1 GPU per node
 #SBATCH --gres=gpu:gh200:4
 #SBATCH --mem=0
@@ -26,7 +26,6 @@ problem=NavierAMGX
 # Define the number of partitions (should be nodes * ntasks-per-node)
 partitions=$SLURM_NTASKS
 threads=$SLURM_CPUS_PER_TASK
-result_file=$partitions
 
 
 container_path=/scratch/project_2001659/danieree/elmer-linsys/containers/container.sif
@@ -84,7 +83,7 @@ srun -n1 apptainer run --bind="$(csc-common-bind)" $container_path ElmerGrid 1 2
 
 cd ../..
 
-for mesh_level in 4; do
+for mesh_level in 3; do
 
     for solver in linsysAMGX/*.sif; do
 	if grep -Fxq "$solver" solver-lists/$problem-Solvers.txt
@@ -116,7 +115,7 @@ for mesh_level in 4; do
             # echo "Diagnostic: ulimits as seen inside the container (per task):"
             # srun apptainer exec --nv --bind="$(csc-common-bind)" $container_path bash -c 'ulimit -a'
 
-            srun --cpus-per-task=$threads apptainer run --nv --bind="$(csc-common-bind)" $container_path ElmerSolver $CASE_FILE -ipar 3 $mesh_level $result_file $threads
+            srun --cpus-per-task=$threads apptainer run --nv --bind="$(csc-common-bind)" $container_path ElmerSolver $CASE_FILE -ipar 2 $mesh_level $partitions
 
 
             end=$(date +%s)

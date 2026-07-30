@@ -1,31 +1,26 @@
-#!/bin/bash 
-#SBATCH --time=01:00:00
-#SBATCH --job-name=vizualize
-#SBATCH --output=logs/%x_%j.out
-#SBATCH --error=logs/%x_%j.err
-#SBATCH --partition=small
-#SBATCH --account=project_2001659
-#SBATCH --nodes=1
-#SBATCH --ntasks-per-node=1
-
 # DEFINE PATHS
 
-module load python-data
+RAW_RESULTS_PATH=raw_results/results_cpu_density_015
+RESULTS_PATH=Navier-CPU/mesh-3-density-015
 
-CASE_PATH=Navier/WinkelStructured
+
+ORG_DIR=$PWD
+
+source $ORG_DIR/.venv/bin/activate
+# CASE_PATH=Navier/WinkelStructured
 # CASE_PATH=Poisson/WinkelUnstructured
 SCRIPT_PATH=python-scripts
 # PROBLEM=Navier
 
 #number of partitions used in the gpu run
-PARTITIONS=6144
+PARTITIONS=1536
 FORMAT=png
 MESH_LEVELS=(3)
 
 # Define the name and location where the scalability plot should be saved
 SCALE_NAME=scalability_test
 # SCALE_PATH=$PWD/results/roihu/Navier-AMGX-WinkelStructured-partitions-$PARTITIONS-density-015
-SCALE_PATH=$PWD/Navier/WinkelStructured/Navier-WinkelStructured-partitions-$PARTITIONS-density-015
+SCALE_PATH=$ORG_DIR/results_2026/roihu/$RESULTS_PATH/Navier-WinkelStructured-partitions-$PARTITIONS
 # SCALE_PATH=$PWD/results/roihu/Poisson-AMGX-WinkelUnstructured
 
 # Define the name and location where the timing plots should be saved
@@ -37,7 +32,7 @@ TIME_PATH=$SCALE_PATH
 
 # Define the path where resulting .dat files are stored (no need to change)
 # RET_PATH=$PWD/$CASE_PATH/results_amgx_density_015
-RET_PATH=$PWD/$CASE_PATH/results_cpu_density_015
+RET_PATH=$ORG_DIR/$RAW_RESULTS_PATH
 
 
 # Define the resulting .dat file (no need to change)
@@ -51,9 +46,6 @@ VIZ_TOT_TIME=false
 
 # Remove the result files if they already exist
 # rm -f $CASE_PATH/results/f$PARTITIONS.*
-
-
-ORG_DIR=$PWD
 
 
 
@@ -123,9 +115,9 @@ for mesh_level in "${MESH_LEVELS[@]}"; do
         echo
 
         if $VIZ_TOT_TIME; then
-            python3 plot_times.py -p $RET_PATH -f $RET_FILE -s $save_as -t $TOL -m $mesh_level  $th_arg
+            python3 plot_times.py -p $RET_PATH -f $RET_FILE -s $save_as -t $TOL -m $mesh_level
         else
-            python3 plot_times.py -p $RET_PATH -f $RET_FILE -s $save_as -t $TOL -m $mesh_level $th_arg
+            python3 plot_times.py -p $RET_PATH -f $RET_FILE -s $save_as -t $TOL -m $mesh_level
         fi
 
         echo "------------------------------------"

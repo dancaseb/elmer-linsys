@@ -5,7 +5,7 @@
 #SBATCH --error=logs/%x_%j.err
 #SBATCH --partition=large
 #SBATCH --account=project_2001659
-#SBATCH --nodes=16
+#SBATCH --nodes=6
 #SBATCH --ntasks-per-node=384
 
 export OMP_NUM_THREADS=1
@@ -58,7 +58,7 @@ TIME_PATH=$SCALE_PATH
 echo "Number of partitions: $PARTITIONS"
 # Define the path where resulting .dat files are stored (no need to change)
 # If changed, also change the path in plot_times.py and plot_scalability_bar.py and also the corresponding sif and scale path
-RET_PATH=$PWD/$CASE_PATH/results_cpu
+RET_PATH=$PWD/$CASE_PATH/results_amgx_density_015
 
 # Define the resulting .dat file (no need to change)
 RET_FILE=f$PARTITIONS.dat
