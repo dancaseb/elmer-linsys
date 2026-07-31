@@ -3,11 +3,11 @@
 #SBATCH --account=project_2001659
 #SBATCH --output=%x_%j.out
 #SBATCH --error=%x_%j.err
-#SBATCH --partition=gpularge
-#SBATCH --nodes=2
-#SBATCH --time=00:45:00
-#SBATCH --ntasks-per-node=4 --cpus-per-task=1 # The product should be 72 if requesting 1 GPU per node
-#SBATCH --gres=gpu:gh200:4
+#SBATCH --partition=gputest
+#SBATCH --nodes=1
+#SBATCH --time=00:15:00
+#SBATCH --ntasks-per-node=1 --cpus-per-task=1 # The product should be 72 if requesting 1 GPU per node
+#SBATCH --gres=gpu:gh200:1
 #SBATCH --mem=0
 
 
@@ -83,7 +83,7 @@ srun -n1 apptainer run --bind="$(csc-common-bind)" $container_path ElmerGrid 1 2
 
 cd ../..
 
-for mesh_level in 3; do
+for mesh_level in 1; do
 
     for solver in linsysAMGX/*.sif; do
 	if grep -Fxq "$solver" solver-lists/$problem-Solvers.txt
@@ -95,6 +95,11 @@ for mesh_level in 3; do
 	    cp linsysAMGX/$filename.json $path/$CONFIG_FILE
 	    sed -i "s/config\.json/$CONFIG_FILE/" $path/$LINSYS_FILE
 	    sed "s/include linsys\.sif/include $LINSYS_FILE/" $path/case_gpu.sif > $path/$CASE_FILE
+
+	    # AMGX's own configured iteration budget/tolerance for this solver, used below to
+	    # detect a solve that silently hit max_iters without actually converging.
+	    max_iters=$(grep -m1 -oP '"max_iters":\s*\K[0-9]+' linsysAMGX/$filename.json)
+	    tolerance=$(grep -m1 -oP '"tolerance":\s*\K[0-9.eE+-]+' linsysAMGX/$filename.json)
 
             cd $path
 
@@ -119,6 +124,23 @@ for mesh_level in 3; do
 
 
             end=$(date +%s)
+
+            # AMGX prints "Total Iterations: N" / "Total Reduction in Residual: R" per solve.
+            # If it hit max_iters, the solve never actually converged even though ElmerSolver
+            # itself exits normally -- flag it here (into stderr, i.e. the job's .err file) so
+            # it's visible immediately instead of buried in thousands of lines of per-iteration
+            # residual output. Reads from this job's own SLURM stdout log (already being written
+            # by the --output=%x_%j.out redirection) rather than capturing a separate copy; `tac`
+            # picks the most recent match since the file accumulates one block per solver/mesh
+            # level looped over in this job.
+            job_log=$ORG_DIR/${SLURM_JOB_NAME:-amgx_all}_${SLURM_JOB_ID}.out
+            if [ -f "$job_log" ]; then
+                iters=$(tac "$job_log" | grep -m1 -oP 'Total Iterations:\s*\K[0-9]+' || true)
+                reduction=$(tac "$job_log" | grep -m1 -oP 'Total Reduction in Residual:\s*\K[0-9.eE+-]+' || true)
+                if [ -n "$iters" ] && [ "$iters" -ge "$max_iters" ]; then
+                    echo "CONVERGENCE FAILURE: $solver (mesh level $mesh_level, $partitions partitions) hit max_iters=$max_iters without converging -- residual only reduced to ${reduction:-unknown} (tolerance $tolerance)" >&2
+                fi
+            fi
 
             echo
             echo "Ending $solver with mesh level $mesh_level"
