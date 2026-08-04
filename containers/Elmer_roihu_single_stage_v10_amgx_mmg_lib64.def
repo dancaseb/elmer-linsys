@@ -426,7 +426,7 @@ EOF
     cd /opt/src
     git clone --recursive https://github.com/dancaseb/elmerfem.git elmerfem
     cd /opt/src/elmerfem
-    git checkout 621b041433269f78b2b56134a04347dd540ecb88
+    git checkout ec01df87845bd60c6448fd446e87219bdc52db07
     git submodule update --init --recursive
 
     # Elmer's FindAMGX.cmake was written for CUDA releases that still shipped
