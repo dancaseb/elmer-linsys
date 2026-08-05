@@ -1,0 +1,2 @@
+linsysAMGX/amgx_bicgstab_amg_none.sif
+linsysAMGX/amgx_cg_amg.sif

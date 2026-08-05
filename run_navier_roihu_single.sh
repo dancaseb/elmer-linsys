@@ -1,9 +1,9 @@
 #!/bin/bash
-#SBATCH --job-name=amgx_endwindings
+#SBATCH --job-name=amgx_cg_amg_cheby
 #SBATCH --account=project_2001659
 #SBATCH --output=%x_%j.out
 #SBATCH --error=%x_%j.err
-#SBATCH --partition=gputest
+#SBATCH --partition=gpumedium
 #SBATCH --nodes=1
 #SBATCH --time=00:15:00
 #SBATCH --ntasks-per-node=1 --cpus-per-task=1 # The product should be 72 if requesting 1 GPU per node
@@ -11,7 +11,7 @@
 #SBATCH --mem=0
 
 # DEFINE THE SOLVER TO RUN
-solver=linsysAMGX/amgx_bicgstab_none.sif
+# solver=linsysAMGX/amgx_bicgstab_none.sif
 # solver=linsysAMGX/amgx_cg_amg.sif
 # solver=linsysAMGX/amgx_fgmres_amg.sif
 # solver=linsysAMGX/amgx_idr_amg.sif
@@ -23,7 +23,7 @@ solver=linsysAMGX/amgx_bicgstab_none.sif
 # solver=linsysAMGX/amgx_fgmres_dilu.sif
 # solver=linsysAMGX/amgx_cg_dilu.sif
 # solver=linsysAMGX/amgx_bicgstab_amg_agg.sif
-# solver=linsysAMGX/amgx_cg_amg_cheby.sif
+solver=linsysAMGX/amgx_cg_amg_cheby.sif
 ###
 
 
@@ -34,18 +34,17 @@ export OMP_NUM_THREADS=1
 
 
 # Define the path to the case folder
-path=Magnetostatics/EndWindings
+path=Navier/WinkelStructured
 
 # Define the problem type
-# problem=NavierAMGX
+problem=NavierAMGX
 
 # Define the number of partitions (should be nodes * ntasks-per-node)
 partitions=$SLURM_NTASKS
 threads=$SLURM_CPUS_PER_TASK
 
-sif_basename=hierarc.sif
 
-container_path=/scratch/project_2001659/danieree/elmer-linsys/containers/container.sif
+container_path=/scratch/project_2001659/danieree/elmer-linsys/containers/container_1.sif
 
 # Job-specific filenames so a concurrently-running job that shares this same
 # case directory (e.g. the CPU sweep) can't clobber this job's linsys.sif /
@@ -54,7 +53,7 @@ ORG_DIR=$PWD
 JOB_TAG=${SLURM_JOB_ID:-$$}
 LINSYS_FILE=linsys_$JOB_TAG.sif
 CONFIG_FILE=config_$JOB_TAG.json
-CASE_FILE="${sif_basename}-${JOB_TAG}.sif"
+CASE_FILE=case_gpu_$JOB_TAG.sif
 
 # Anchored to $ORG_DIR (not a relative $path) since a mid-loop srun failure
 # under `set -e` exits before the trailing `cd ../..` restores the cwd.
@@ -96,7 +95,7 @@ cd $path
 # -n1: ElmerGrid itself isn't MPI-parallel, so without this srun launches one
 # redundant copy per task (4-8x concurrent writers into the same
 # winkel/partitioning.$partitions/ directory).
-srun -n1 apptainer run --bind="$(csc-common-bind)" $container_path ElmerGrid 2 2 ./mesh -partdual -metiskway $partitions
+srun -n1 apptainer run --bind="$(csc-common-bind)" $container_path ElmerGrid 1 2 winkel.grd -partdual -metiskway $partitions
 
 cd ../..
 
@@ -109,7 +108,7 @@ for mesh_level in 1; do
     filename=$(basename "$solver" ".sif")
     cp linsysAMGX/$filename.json $path/$CONFIG_FILE
     sed -i "s/config\.json/$CONFIG_FILE/" $path/$LINSYS_FILE
-    sed "s/include linsys\.sif/include $LINSYS_FILE/" "$path/$sif_basename" > $path/$CASE_FILE
+    sed "s/include linsys\.sif/include $LINSYS_FILE/" $path/case_gpu.sif > $path/$CASE_FILE
 
     # AMGX's own configured iteration budget/tolerance for this solver, used below to
     # detect a solve that silently hit max_iters without actually converging.
