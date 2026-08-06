@@ -2,7 +2,7 @@ Header
   CHECK KEYWORDS Warn
   Mesh DB "." "mesh"
   Include Path ""
-  Results Directory "results_amgx"
+  Results Directory "results_cpu"
 End
 
 Simulation
@@ -89,6 +89,10 @@ Solver 2
   Solver Timing = True
 !  Linear System Row Equilibration = True
 
+  NonLinear System Consistent Norm = True
+
+
+
 End
 
 Solver 3
@@ -143,7 +147,7 @@ Solver 5
   Single Precision = Logical True
 
   Filename Prefix = String hierarch-glyphs
-!  Vtu Format = Logical True
+  Vtu Format = Logical True
 End 
 
 
