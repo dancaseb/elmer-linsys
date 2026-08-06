@@ -3,11 +3,11 @@
 #SBATCH --account=project_2001659
 #SBATCH --output=%x_%j.out
 #SBATCH --error=%x_%j.err
-#SBATCH --partition=gputest
+#SBATCH --partition=gpumedium
 #SBATCH --nodes=1
-#SBATCH --time=00:15:00
-#SBATCH --ntasks-per-node=1 --cpus-per-task=1 # The product should be 72 if requesting 1 GPU per node
-#SBATCH --gres=gpu:gh200:1
+#SBATCH --time=00:60:00
+#SBATCH --ntasks-per-node=4 --cpus-per-task=1 # The product should be 72 if requesting 1 GPU per node
+#SBATCH --gres=gpu:gh200:4
 #SBATCH --mem=0
 
 
@@ -83,7 +83,7 @@ srun -n1 apptainer run --bind="$(csc-common-bind)" $container_path ElmerGrid 1 2
 
 cd ../..
 
-for mesh_level in 1; do
+for mesh_level in 2; do
 
     for solver in linsysAMGX/*.sif; do
 	if grep -Fxq "$solver" solver-lists/$problem-Solvers.txt

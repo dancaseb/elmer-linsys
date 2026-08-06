@@ -6,7 +6,7 @@ Header
 End
 
 Simulation
-!  Mesh Levels = $ipar(0)
+  Mesh Levels = $ipar(0)
   Max Output Level = 7
   Coordinate System = Cartesian
   Coordinate Mapping(3) = 1 2 3
@@ -83,19 +83,12 @@ Solver 2
   Newton-Raphson Iteration = Logical True
   Nonlinear System Max Iterations = 1
   
-  Linear System Solver = Iterative
-  Linear System Preconditioning = none
-  Linear System Convergence Tolerance = 1e-8
-  Linear System Residual Output = 20
-  Linear System Max Iterations = 5000
-  Linear System Iterative Method = BiCGStabl ! idrs !BiCGstab2
-  BiCGStabL Polynomial Degree = 4
-  Idrs Parameter = 6
+  include linsys.sif
 
-  Solver Timing = True 
+  Linear System Timing = True
+  Solver Timing = True
 !  Linear System Row Equilibration = True
 
-!  Filename = f$ipar(1)$.dat
 End
 
 Solver 3
@@ -154,26 +147,58 @@ Solver 5
 End 
 
 
-Solver 6
-!  Exec Solver = Never
-  Equation = "SaveScalars"
-  Procedure = "SaveData" "SaveScalars"
-  Filename = hierarc.dat
+!Solver 6
+!!  Exec Solver = Never
+!  Equation = "SaveScalars"
+!  Procedure = "SaveData" "SaveScalars"
+!  Filename = hierarc.dat
+!
+!  Variable 1 = Magnetic Flux Density e 1
+!  Operator 1 = int mean
+!  Variable 2 = Magnetic Flux Density e 2
+!  Operator 2 = int mean
+!  Variable 3 = Magnetic Flux Density e 3
+!  Operator 3 = int mean
+!  
+!  Variable 4 = Magnetic Field Strength e 1
+!  Operator 4 = int mean
+!  Variable 5 = Magnetic Field Strength e 2
+!  Operator 5 = int mean
+!  Variable 6 = Magnetic Field Strength e 3
+!  Operator 6 = int mean  
+!End
 
-  Variable 1 = Magnetic Flux Density e 1
-  Operator 1 = int mean
-  Variable 2 = Magnetic Flux Density e 2
-  Operator 2 = int mean
-  Variable 3 = Magnetic Flux Density e 3
-  Operator 3 = int mean
+! Use SaveScalas same way as other linsys methods
+Solver 6
+!  Exec Solver = never
+  Equation = SaveScalars
+  Procedure = "SaveData" "SaveScalars"
   
-  Variable 4 = Magnetic Field Strength e 1
-  Operator 4 = int mean
-  Variable 5 = Magnetic Field Strength e 2
-  Operator 5 = int mean
-  Variable 6 = Magnetic Field Strength e 3
-  Operator 6 = int mean
-End
+  Filename = f$ipar(1)$.dat
+  File Append = Logical True
+  Parallel Reduce = Logical True
+
+  Variable 1 = AV
+  Operator 1 = dofs
+  Operator 2 = elements
+  Operator 3 = partitions
+  Operator 4 = norm
+  Operator 5 = cpu time
+
+  Expression 1 = Real $ipar(0)
+
+! Give a unique tag to each line/method
+  Line Marker = Integer $LinMethod$
+
+! We write a separate file showing how marker is mapped to string of the method
+  Comment = String $LinStr$
+
+! add the number of partitions to the filename
+!  Partition Numbering = Logical True
+  File Append = True
+  Parallel Reduce = True
+End 
+
 
 Equation 1
   Name = "CoilEq"

@@ -1,7 +1,7 @@
 # DEFINE PATHS
 
-RAW_RESULTS_PATH=raw_results/results_cpu_density_015
-RESULTS_PATH=Navier-CPU/mesh-3-density-015
+RAW_RESULTS_PATH=results_amgx_density_025
+RESULTS_PATH=Navier-AMGX/mesh-1-density-025
 
 
 ORG_DIR=$PWD
@@ -13,9 +13,9 @@ SCRIPT_PATH=python-scripts
 # PROBLEM=Navier
 
 #number of partitions used in the gpu run
-PARTITIONS=1536
+PARTITIONS=1
 FORMAT=png
-MESH_LEVELS=(3)
+MESH_LEVELS=(1)
 
 # Define the name and location where the scalability plot should be saved
 SCALE_NAME=scalability_test
