@@ -1,13 +1,14 @@
 #!/bin/bash 
-#SBATCH --time=00:15:00
+#SBATCH --time=00:60:00
 #SBATCH --job-name=cpu_endwindings
 #SBATCH --output=logs/%x_%j.out
 #SBATCH --error=logs/%x_%j.err
-#SBATCH --partition=test
+#SBATCH --partition=medium
 #SBATCH --account=project_2001659
-#SBATCH --nodes=1
+#SBATCH --nodes=4
 #SBATCH --ntasks-per-node=384
 #SBATCH --cpus-per-task=1
+#SBATCH --mem=0
 
 set -euo pipefail
 
@@ -48,7 +49,7 @@ ElmerGrid 2 2 ./mesh -partdual -metiskway $partitions
 
 cd ../..
 
-for mesh_level in 1; do
+for mesh_level in 4; do
     for solver in linsys/*.sif; do
 	if grep -Fxq "$solver" solver-lists/$problem-Solvers.txt
 	then
@@ -72,7 +73,14 @@ for mesh_level in 1; do
             echo
 
 
-            srun --cpus-per-task=$threads ElmerSolver $CASE_FILE -ipar 2 $mesh_level $partitions
+            # `set -e` would otherwise kill the whole sweep (and every solver
+            # still queued after this one) the moment ElmerSolver aborts on a
+            # non-converged solve -- wrapping the call in `if ! ...` lets that
+            # single failure be logged and the loop move on to the next solver.
+            if ! srun --cpus-per-task=$threads ElmerSolver $CASE_FILE -ipar 2 $mesh_level $partitions
+            then
+                echo "SOLVER CRASHED: $solver (mesh level $mesh_level, $partitions partitions) -- ElmerSolver exited non-zero, moving on to next solver" >&2
+            fi
 
 
             end=$(date +%s)

@@ -1,7 +1,10 @@
 # DEFINE PATHS
 
-RAW_RESULTS_PATH=results_amgx_density_025
-RESULTS_PATH=Navier-AMGX/mesh-1-density-025
+# RAW_RESULTS_PATH=results_2026/roihu/EndWindings-AMGX/partitions-4/results_amgx
+# RESULTS_PATH=EndWindings-AMGX
+RAW_RESULTS_PATH=results_2026/roihu/EndWindings-CPU/results_cpu
+RESULTS_PATH=EndWindings-CPU
+
 
 
 ORG_DIR=$PWD
@@ -13,15 +16,14 @@ SCRIPT_PATH=python-scripts
 # PROBLEM=Navier
 
 #number of partitions used in the gpu run
-PARTITIONS=1
+PARTITIONS=1536
 FORMAT=png
-MESH_LEVELS=(1)
-
+MESH_LEVELS=(4)
 # Define the name and location where the scalability plot should be saved
 SCALE_NAME=scalability_test
 # SCALE_PATH=$PWD/results/roihu/Navier-AMGX-WinkelStructured-partitions-$PARTITIONS-density-015
-SCALE_PATH=$ORG_DIR/results_2026/roihu/$RESULTS_PATH/Navier-WinkelStructured-partitions-$PARTITIONS
-# SCALE_PATH=$PWD/results/roihu/Poisson-AMGX-WinkelUnstructured
+# SCALE_PATH=$ORG_DIR/results_2026/roihu/$RESULTS_PATH/Navier-WinkelStructured-partitions-$PARTITIONS
+SCALE_PATH=$ORG_DIR/results_2026/roihu/$RESULTS_PATH/partitions-$PARTITIONS
 
 # Define the name and location where the timing plots should be saved
 # (these will be incremented with the mesh level)

@@ -3,8 +3,8 @@
 #SBATCH --account=project_2001659
 #SBATCH --output=%x_%j.out
 #SBATCH --error=%x_%j.err
-#SBATCH --partition=gpularge
-#SBATCH --nodes=2
+#SBATCH --partition=gpumedium
+#SBATCH --nodes=1
 #SBATCH --time=00:60:00
 #SBATCH --ntasks-per-node=4 --cpus-per-task=1 # The product should be 72 if requesting 1 GPU per node
 #SBATCH --gres=gpu:gh200:4
