@@ -250,15 +250,21 @@ EOF
     rm -rf /opt/src/gmsh-4.13.1-source /opt/src/gmsh-4.13.1-source.tgz
 
     # -------------------------------------------------------------------------
-    # hypre 2.32.0
+    # hypre 2.33.0
     # -------------------------------------------------------------------------
     cd /
     wget -q -nc --no-check-certificate -P /opt/src \
-        https://github.com/hypre-space/hypre/archive/refs/tags/v2.32.0.tar.gz
-    tar -xzf /opt/src/v2.32.0.tar.gz -C /opt/src
-    cd /opt/src/hypre-2.32.0/src
+        https://github.com/hypre-space/hypre/archive/refs/tags/v2.33.0.tar.gz
+    tar -xzf /opt/src/v2.33.0.tar.gz -C /opt/src
+    cd /opt/src/hypre-2.33.0/src
     chmod -R u+rwX . || true
+    # --enable-unified-memory: should be tested if it doesn't hurt performance
+    # enable hypre to run on gpu
     bash ./configure \
+        --with-cuda \
+        --with-gpu-arch="${CUDA_ARCH}" \
+        --enable-unified-memory \
+        --with-cxxstandard=14 \
         --with-openmp \
         --with-blas \
         --with-lapack \
@@ -269,9 +275,13 @@ EOF
         CFLAGS="-fPIC -O3" \
         CXXFLAGS="-fPIC -O3" \
         FFLAGS="-fPIC -O3"
+    # nvcc (CUDA 12.9.1) fails to parse GCC 14.3.0's libstdc++ headers under
+    # -std=c++11, which hypre's configure hardcodes for the CUDA build;
+    # bump it so nvcc's frontend sees the code path GCC 14 actually expects.
+    sed -i 's/-std=c++11/-std=c++14/' config/Makefile.config
     make -j"${JOBS}"
     make install
-    rm -rf /opt/src/hypre-2.32.0 /opt/src/v2.32.0.tar.gz
+    rm -rf /opt/src/hypre-2.33.0 /opt/src/v2.33.0.tar.gz
     ldconfig
 
     # -------------------------------------------------------------------------
