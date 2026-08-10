@@ -275,10 +275,6 @@ EOF
         CFLAGS="-fPIC -O3" \
         CXXFLAGS="-fPIC -O3" \
         FFLAGS="-fPIC -O3"
-    # nvcc (CUDA 12.9.1) fails to parse GCC 14.3.0's libstdc++ headers under
-    # -std=c++11, which hypre's configure hardcodes for the CUDA build;
-    # bump it so nvcc's frontend sees the code path GCC 14 actually expects.
-    sed -i 's/-std=c++11/-std=c++14/' config/Makefile.config
     make -j"${JOBS}"
     make install
     rm -rf /opt/src/hypre-2.33.0 /opt/src/v2.33.0.tar.gz
