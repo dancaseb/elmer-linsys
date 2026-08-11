@@ -1,11 +1,11 @@
 #!/bin/bash
-#SBATCH --job-name=amgx_all
+#SBATCH --job-name=hypre_gpu_endwindings
 #SBATCH --account=project_2001659
 #SBATCH --output=%x_%j.out
 #SBATCH --error=%x_%j.err
 #SBATCH --partition=gpumedium
 #SBATCH --nodes=1
-#SBATCH --time=00:15:00
+#SBATCH --time=01:00:00
 #SBATCH --ntasks-per-node=1 --cpus-per-task=1 # The product should be 72 if requesting 1 GPU per node
 #SBATCH --gres=gpu:gh200:1
 #SBATCH --mem=0
@@ -36,7 +36,7 @@ threads=$SLURM_CPUS_PER_TASK
 sif_basename=hierarc_hypre.sif
 
 
-container_path=/scratch/project_2001659/danieree/elmer-linsys/containers/container_hypre_cuda.sif
+container_path=/scratch/project_2001659/danieree/elmer-linsys/containers/container_hypre_cuda_with_error_checks.sif
 
 # Job-specific filenames so a concurrently-running job that shares this same
 # case directory (e.g. the CPU sweep) can't clobber this job's linsys.sif /
@@ -126,8 +126,18 @@ for mesh_level in 1; do
             # echo "Diagnostic: ulimits as seen inside the container (per task):"
             # srun apptainer exec --nv --bind="$(csc-common-bind)" $container_path bash -c 'ulimit -a'
 
-            srun --cpus-per-task=$threads apptainer run --nv --bind="$(csc-common-bind)" $container_path ElmerSolver $CASE_FILE -ipar 2 $mesh_level $partitions
-
+            # srun --cpus-per-task=$threads apptainer run --nv --bind="$(csc-common-bind)" $container_path ElmerSolver $CASE_FILE -ipar 2 $mesh_level $partitions
+            
+            
+            # Do some profiling magic
+            srun --cpus-per-task=$threads nsys profile \
+                -o "${ORG_DIR}/nsys_${JOB_TAG}_%q{SLURM_PROCID}" \
+                -f true \
+                -t cuda,nvtx,osrt \
+                -s cpu \
+                --cuda-memory-usage=true \
+                --stats=true \
+                apptainer run --nv --bind="$(csc-common-bind)" $container_path ElmerSolver $CASE_FILE -ipar 2 $mesh_level $partitions
 
             end=$(date +%s)
 

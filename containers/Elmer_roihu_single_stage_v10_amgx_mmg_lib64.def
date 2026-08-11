@@ -430,14 +430,15 @@ EOF
     fi
 
     cd /opt/src
-    git clone --recursive https://github.com/dancaseb/elmerfem.git elmerfem
+    git clone --recursive --branch devel https://github.com/dancaseb/elmerfem.git elmerfem
     cd /opt/src/elmerfem
-    git checkout ec01df87845bd60c6448fd446e87219bdc52db07
     git submodule update --init --recursive
 
     # Elmer's FindAMGX.cmake was written for CUDA releases that still shipped
     # the legacy nvToolsExt link library. CUDA 12.9 provides NVTX v3 as headers,
     # so do not add CUDA_nvToolsExt_LIBRARY when FindCUDA leaves it NOTFOUND.
+    # AMGX's static lib also calls cuRAND (curandCreateGenerator etc.) internally,
+    # but FindAMGX.cmake never added it to CUDA_LIBRARIES, so add it here too.
     python3 - <<'PY_AMGX_NVTX_PATCH'
 from pathlib import Path
 p = Path('/opt/src/elmerfem/cmake/Modules/FindAMGX.cmake')
@@ -448,12 +449,12 @@ new = '''IF (CUDA_nvToolsExt_LIBRARY AND NOT CUDA_nvToolsExt_LIBRARY MATCHES "NO
 ELSE()
   SET(CUDA_NVTX_COMPAT_LIBRARY dl)
 ENDIF()
-SET(CUDA_LIBRARIES ${CUDA_LIBRARIES} ${CUDA_cusparse_LIBRARY} ${CUDA_cublas_LIBRARY} ${CUDA_cusolver_LIBRARY} ${CUDA_NVTX_COMPAT_LIBRARY})'''
+SET(CUDA_LIBRARIES ${CUDA_LIBRARIES} ${CUDA_cusparse_LIBRARY} ${CUDA_cublas_LIBRARY} ${CUDA_cusolver_LIBRARY} ${CUDA_curand_LIBRARY} ${CUDA_NVTX_COMPAT_LIBRARY})'''
 if old not in s:
     raise SystemExit('Could not patch FindAMGX.cmake: expected CUDA_LIBRARIES line not found')
 p.write_text(s.replace(old, new))
 PY_AMGX_NVTX_PATCH
-    grep -n "CUDA_NVTX_COMPAT_LIBRARY" /opt/src/elmerfem/cmake/Modules/FindAMGX.cmake
+    grep -n "CUDA_NVTX_COMPAT_LIBRARY\|CUDA_curand_LIBRARY" /opt/src/elmerfem/cmake/Modules/FindAMGX.cmake
 
     # GCC 14 is stricter about incompatible pointer types. Elmer's bundled
     # Zoltan Fortran wrapper declares the local handle volatile, then passes

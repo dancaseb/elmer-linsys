@@ -1,10 +1,10 @@
-amgx-cg_amg
+amgx-gmres
 Metadata for SaveScalars file: results_amgx/f4.dat
 Elmer version: 26.2
 Elmer revision: ec01df878
 Elmer compilation date: 2026-07-31
-Solver input file: case_gpu_506636.sif
-File started at: 2026/08/07 15:25:00
+Solver input file: case_gpu_556049.sif
+File started at: 2026/08/10 11:37:50
  
 Variables in columns of matrix: 
    1: Line Marker
