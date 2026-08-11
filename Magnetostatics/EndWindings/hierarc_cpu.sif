@@ -90,6 +90,12 @@ Solver 2
 !  Linear System Row Equilibration = True
 
   NonLinear System Consistent Norm = True
+  ! Use Magnetic norm to determine the correctness of the solver
+  Calculate Magnetic Norm = Logical True
+  Use Magnetic Norm = Logical True
+  ! Without this, the framework's own steady-state convergence check
+  ! recomputes and overwrites Solver % Variable % Norm 
+  Skip Compute Steady State Change = Logical True
 
 
 
@@ -117,7 +123,7 @@ Solver 3
 End
 
 Solver 4
-!  Exec Solver = Never
+  Exec Solver = Never
   Equation = VtuOutput
   Procedure = "ResultOutputSolve" "ResultOutputSolver"
   Output File Name = hierarc
@@ -129,7 +135,7 @@ Solver 4
 End 
 
 Solver 5
-!  Exec Solver = Never
+  Exec Solver = Never
   Equation = SaveGridData
   Procedure = "SaveGridData" "SaveGridData"
 
@@ -300,4 +306,5 @@ Body Force 1
 End
 
 Solver 1 :: Reference Norm = 2.75178291E-04
-Solver 2 :: Reference Norm = 2.53895694E-07
+!Solver 2 :: Reference Norm = 2.53895694E-07
+Solver 2 :: Reference Norm = 1.415160201606E-04
