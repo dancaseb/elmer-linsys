@@ -7,4 +7,4 @@
 #SBATCH --ntasks-per-node=1 --cpus-per-task=72  # The product should be 72 if requesting 1 GPU per node
 #SBATCH --gres=gpu:gh200:1  # Corresponds to 1 GPU per node
 
-srun apptainer build --fakeroot container_hypre_cuda.sif Elmer_roihu_single_stage_v10_amgx_mmg_lib64.def
+srun apptainer build --fakeroot container_hypre_cuda_v3.sif Elmer_roihu_single_stage_v10_amgx_mmg_lib64.def

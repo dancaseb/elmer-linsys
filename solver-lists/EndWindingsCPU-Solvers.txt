@@ -1,4 +1,3 @@
-linsys/elmer_iter_BiCGStab4_none.sif
 linsys/elmer_iter_BiCGStab_none.sif
 linsys/elmer_iter_CG_none.sif
 linsys/hypre_pcg_AMS_smoother0.sif

@@ -430,7 +430,7 @@ EOF
     fi
 
     cd /opt/src
-    git clone --recursive --branch devel https://github.com/dancaseb/elmerfem.git elmerfem
+    git clone --recursive --branch dev-daniel https://github.com/dancaseb/elmerfem.git elmerfem
     cd /opt/src/elmerfem
     git submodule update --init --recursive
 
