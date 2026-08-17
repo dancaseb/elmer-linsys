@@ -1,12 +1,12 @@
 #!/bin/bash 
-#SBATCH --time=00:60:00
-#SBATCH --job-name=cpu_endwindings
+#SBATCH --time=00:15:00
+#SBATCH --job-name=cpu_ew_mesh_1
 #SBATCH --output=logs/%x_%j.out
 #SBATCH --error=logs/%x_%j.err
-#SBATCH --partition=medium
+#SBATCH --partition=test
 #SBATCH --account=project_2001659
-#SBATCH --nodes=2
-#SBATCH --ntasks-per-node=384
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=16
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=0
 
@@ -28,7 +28,9 @@ problem=EndWindingsCPU
 partitions=$SLURM_NTASKS
 threads=$SLURM_CPUS_PER_TASK
 
-sif_basename=hierarc_cpu.sif
+sif_basename=hierarc.sif
+RESULTS_DIR=results_cpu_08_17
+
 
 # Tracks whether any solver in the sweep crashed or failed to converge/match
 # the reference solution, so the job's own exit code (checked below) reflects
@@ -55,13 +57,14 @@ ElmerGrid 2 2 ./mesh -partdual -metiskway $partitions
 
 cd ../..
 
-for mesh_level in 3; do
+for mesh_level in 1; do
     for solver in linsys/*.sif; do
 	if grep -Fxq "$solver" solver-lists/$problem-Solvers.txt
 	then
 
 	    cp $solver $path/$LINSYS_FILE
         sed "s/include linsys\.sif/include $LINSYS_FILE/" "$path/$sif_basename" > $path/$CASE_FILE
+        sed -i "s/Results Directory \".*\"/Results Directory \"$RESULTS_DIR\"/" $path/$CASE_FILE
 
 	    # Hypre solves don't raise an ERROR on hitting the iteration cap (Elmer's own
 	    # iterative solvers do, checked below) -- they just report how many iterations

@@ -284,3 +284,53 @@ TODO check what actually gets plotted in the graph
 ### GPU container
 On roihu-gpu partition, the recommended way of running Elmer is via containers (for testing). The container and build script for it is included in this repo.
 
+
+# EndWindings
+
+## HYPRE on GPU:
+
+what is the correct magnetic norm?
+I thought it was 1.415160201606E-04
+
+but mesh lvl 1 (both row and bulk assembly) report 1.406563E-04
+
+Added error checks in Hypre. Seems that there has been an error before the matrix assembly rewrite (see hypre_gpu_endwindings_586366.err ran with diagnostics with old container with row/row assembly). 
+
+Norm mesh lvl 1 1.40656300E-04
+
+
+## CPU
+these probably dont really work, test them
+
+linsys/hypre_GMRes_BoomerAMG.sif
+linsys/elmer_P_Idrs5_CG_none.sif
+linsys/hypre_FlexGmres_BoomerAMG.sif
+
+these should work for lower meshes at least
+
+linsys/elmer_iter_BiCGStab4_none.sif
+linsys/elmer_iter_BiCGStab_none.sif
+linsys/elmer_iter_CG_none.sif
+linsys/hypre_pcg_AMS_smoother0.sif
+
+## AMGX
+out of these:
+
+linsysAMGX/amgx_gmres_none.sif
+linsysAMGX/amgx_fgmres_none.sif
+linsysAMGX/amgx_bicgstab_none.sif
+linsysAMGX/amgx_cg_amg.sif
+linsysAMGX/amgx_cg_none.sif
+
+probably only cg and bicgstab works for lower and higher meshes
+
+Norm mesh lvl 1 for amgx is 1.406563E-04
+mesh lvl 2, probably 1.41318692E-04
+
+
+## Testing
+
+Hypre + Elmer CPU
+lvl 2 - mpi: 64, 32
+lvl 1 - 8
+
