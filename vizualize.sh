@@ -1,9 +1,9 @@
 # DEFINE PATHS
 
-# RAW_RESULTS_PATH=results_2026/roihu/EndWindings-AMGX/partitions-4/results_amgx
-# RESULTS_PATH=EndWindings-AMGX
-RAW_RESULTS_PATH=results_2026/roihu/EndWindings-CPU/results_cpu
-RESULTS_PATH=EndWindings-CPU
+RAW_RESULTS_PATH=results_2026/roihu/EndWindings-AMGX/results_amgx
+RESULTS_PATH=EndWindings-AMGX
+# RAW_RESULTS_PATH=results_2026/roihu/EndWindings-CPU/results_cpu
+# RESULTS_PATH=EndWindings-CPU
 
 
 
@@ -16,9 +16,9 @@ SCRIPT_PATH=python-scripts
 # PROBLEM=Navier
 
 #number of partitions used in the gpu run
-PARTITIONS=1536
+PARTITIONS=4
 FORMAT=png
-MESH_LEVELS=(4)
+MESH_LEVELS=(2 3)
 # Define the name and location where the scalability plot should be saved
 SCALE_NAME=scalability_test
 # SCALE_PATH=$PWD/results/roihu/Navier-AMGX-WinkelStructured-partitions-$PARTITIONS-density-015
