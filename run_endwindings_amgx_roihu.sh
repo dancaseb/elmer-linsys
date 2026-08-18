@@ -1,13 +1,13 @@
 #!/bin/bash
-#SBATCH --job-name=amgx_all
+#SBATCH --job-name=amgx_ew_mesh_3
 #SBATCH --account=project_2001659
 #SBATCH --output=%x_%j.out
 #SBATCH --error=%x_%j.err
 #SBATCH --partition=gpumedium
 #SBATCH --nodes=1
-#SBATCH --time=00:60:00
-#SBATCH --ntasks-per-node=4 --cpus-per-task=1 # The product should be 72 if requesting 1 GPU per node
-#SBATCH --gres=gpu:gh200:4
+#SBATCH --time=00:45:00
+#SBATCH --ntasks-per-node=1 --cpus-per-task=1 # The product should be 72 if requesting 1 GPU per node
+#SBATCH --gres=gpu:gh200:1
 #SBATCH --mem=0
 
 
@@ -28,9 +28,11 @@ partitions=$SLURM_NTASKS
 threads=$SLURM_CPUS_PER_TASK
 
 sif_basename=hierarc.sif
+RESULTS_DIR=results_amgx_08_17
 
 
-container_path=/scratch/project_2001659/danieree/elmer-linsys/containers/container.sif
+# container_path=/scratch/project_2001659/danieree/elmer-linsys/containers/container.sif
+container_path=/scratch/project_2001659/danieree/elmer-linsys/containers/container_hypre_cuda.sif
 
 # Job-specific filenames so a concurrently-running job that shares this same
 # case directory (e.g. the CPU sweep) can't clobber this job's linsys.sif /
@@ -71,7 +73,6 @@ CASE_FILE=case_gpu_$JOB_TAG.sif
 # default case file in the folder
 # cp $path/case_amgx.sif $path/case.sif
 
-
 cd $path
 # Commands for Poisson/WinkelUnstructured mesh
 # srun apptainer run --bind="$(csc-common-bind)" $container_path gmsh winkel.geo -3 -clscale 1.0 -v 5
@@ -85,7 +86,7 @@ srun -n1 apptainer run --bind="$(csc-common-bind)" $container_path ElmerGrid 2 2
 
 cd ../..
 
-for mesh_level in 3; do
+for mesh_level in 2; do
     for solver in linsysAMGX/*.sif; do
 	if grep -Fxq "$solver" solver-lists/$problem-Solvers.txt
 	then
@@ -96,6 +97,7 @@ for mesh_level in 3; do
 	    cp linsysAMGX/$filename.json $path/$CONFIG_FILE
 	    sed -i "s/config\.json/$CONFIG_FILE/" $path/$LINSYS_FILE
         sed "s/include linsys\.sif/include $LINSYS_FILE/" "$path/$sif_basename" > $path/$CASE_FILE
+        sed -i "s/Results Directory \".*\"/Results Directory \"$RESULTS_DIR\"/" $path/$CASE_FILE
 
 	    # AMGX's own configured iteration budget/tolerance for this solver, used below to
 	    # detect a solve that silently hit max_iters without actually converging.

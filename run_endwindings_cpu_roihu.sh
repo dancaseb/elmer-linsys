@@ -3,10 +3,10 @@
 #SBATCH --job-name=cpu_ew_mesh_1
 #SBATCH --output=logs/%x_%j.out
 #SBATCH --error=logs/%x_%j.err
-#SBATCH --partition=test
+#SBATCH --partition=medium
 #SBATCH --account=project_2001659
 #SBATCH --nodes=1
-#SBATCH --ntasks-per-node=16
+#SBATCH --ntasks-per-node=32
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=0
 
@@ -57,7 +57,7 @@ ElmerGrid 2 2 ./mesh -partdual -metiskway $partitions
 
 cd ../..
 
-for mesh_level in 1; do
+for mesh_level in 1 2; do
     for solver in linsys/*.sif; do
 	if grep -Fxq "$solver" solver-lists/$problem-Solvers.txt
 	then

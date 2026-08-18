@@ -1,13 +1,13 @@
 #!/bin/bash
-#SBATCH --job-name=hypre_gpu_endwindings
+#SBATCH --job-name=hypre_cuda_endwindings
 #SBATCH --account=project_2001659
 #SBATCH --output=%x_%j.out
 #SBATCH --error=%x_%j.err
-#SBATCH --partition=gputest
+#SBATCH --partition=gpumedium
 #SBATCH --nodes=1
-#SBATCH --time=00:15:00
-#SBATCH --ntasks-per-node=2 --cpus-per-task=1 # The product should be 72 if requesting 1 GPU per node
-#SBATCH --gres=gpu:gh200:2
+#SBATCH --time=00:30:00
+#SBATCH --ntasks-per-node=1 --cpus-per-task=1 # The product should be 72 if requesting 1 GPU per node
+#SBATCH --gres=gpu:gh200:1
 #SBATCH --mem=0
 
 
@@ -34,14 +34,14 @@ partitions=$SLURM_NTASKS
 threads=$SLURM_CPUS_PER_TASK
 
 sif_basename=hierarc.sif
-RESULTS_DIR=results_hypre_cuda_08_13
+RESULTS_DIR=results_hypre_cuda_nonunified_08_18
 
 
 # Container with new matrix assembly
-# container_path=/scratch/project_2001659/danieree/elmer-linsys/containers/container_hypre_cuda_v2.sif
+# container_path=/scratch/project_2001659/danieree/elmer-linsys/containers/container_hypre_cuda.sif
 
 # container with old matrix assembly (for comparison)
-container_path=/scratch/project_2001659/danieree/elmer-linsys/containers/container_hypre_cuda_v3.sif
+container_path=/scratch/project_2001659/danieree/elmer-linsys/containers/container_hypre_cuda_non_unified_memory.sif
 
 # Job-specific filenames so a concurrently-running job that shares this same
 # case directory (e.g. the CPU sweep) can't clobber this job's linsys.sif /
@@ -96,7 +96,7 @@ srun -n1 apptainer run --bind="$(csc-common-bind)" $container_path ElmerGrid 2 2
 
 cd ../..
 
-for mesh_level in 1; do
+for mesh_level in 2; do
     for solver in linsys/*.sif; do
 	if grep -Fxq "$solver" solver-lists/$problem-Solvers.txt
 	then
