@@ -1,0 +1,2 @@
+******: hypre: bicgstab + none
+******: hypre: pcg + ams + smoother 0
