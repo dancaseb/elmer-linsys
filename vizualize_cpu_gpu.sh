@@ -1,6 +1,6 @@
 # DEFINE PATHS
 
-RESULTS_ROOT=results_2026/roihu/EndWindings-08-17
+RESULTS_ROOT=results_2026/roihu/EndWindings-08-19
 
 # Directory holding the CPU f<n>.dat/.marker/.names files (one file per partition count).
 # Add more f<n>.dat files here and the plot picks them up automatically -- no script changes needed.

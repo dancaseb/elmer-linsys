@@ -53,11 +53,11 @@ cpu_path = "../results_2026/roihu/Navier-CPU/mesh-3-density-015"
 gpu_path = "../results_2026/roihu/Navier-AMGX/mesh-3-density-015"
 
 # Predefined partition counts, each corresponding to a Navier-WinkelStructured-partitions-<n> dir
-cpu_partitions = [1536, 3072, 6144]
-gpu_partitions = [12, 16, 24]
+cpu_partitions = [1536, 2304, 3072, 6144]
+gpu_partitions = [12, 16, 24, 32]
 
 # Predefined GPU node counts, one per entry in gpu_partitions, plotted on the GPU subplot's x-axis
-gpu_nodes = [3, 4, 6]
+gpu_nodes = [3, 4, 6, 8]
 
 # Predefined CPU solver to filter for (the .dat files may contain more than one solver)
 cpu_solver = "cg + ilu0"
