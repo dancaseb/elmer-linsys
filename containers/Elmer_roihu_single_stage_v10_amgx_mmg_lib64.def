@@ -258,7 +258,7 @@ EOF
     tar -xzf /opt/src/v2.33.0.tar.gz -C /opt/src
     cd /opt/src/hypre-2.33.0/src
     chmod -R u+rwX . || true
-    # --enable-unified-memory: should be tested if it doesn't hurt performance
+    # --enable-unified-memory: should be tested if it doesn't hurt performance (probably does)
     # enable hypre to run on gpu
     bash ./configure \
         --with-cuda \
@@ -430,7 +430,7 @@ EOF
     fi
 
     cd /opt/src
-    git clone --recursive --branch dev-daniel https://github.com/dancaseb/elmerfem.git elmerfem
+    git clone --recursive --branch devel https://github.com/dancaseb/elmerfem.git elmerfem
     cd /opt/src/elmerfem
     git submodule update --init --recursive
 
