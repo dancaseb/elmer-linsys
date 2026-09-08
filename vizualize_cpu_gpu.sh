@@ -1,16 +1,19 @@
+# SCRIPT FOR VISUALIZING CPU VS GPU RESULTS
+# USER 
+
 # DEFINE PATHS
 
-RESULTS_ROOT=results_2026/roihu/EndWindings-08-19
+RESULTS_ROOT=results_2026/roihu/EndWindings
 
 # Directory holding the CPU f<n>.dat/.marker/.names files (one file per partition count).
 # Add more f<n>.dat files here and the plot picks them up automatically -- no script changes needed.
-CPU_DIR=$RESULTS_ROOT/results_cpu_08_17
+CPU_DIR=$RESULTS_ROOT/results_cpu
 
 # Directories/files holding the single-GPU reference runs
-GPU_AMGX_DIR=$RESULTS_ROOT/results_amgx_08_17
+GPU_AMGX_DIR=$RESULTS_ROOT/results_amgx
 GPU_AMGX_FILE=f1.dat
 
-GPU_HYPRE_CUDA_DIR=$RESULTS_ROOT/results_hypre_cuda_08_17
+GPU_HYPRE_CUDA_DIR=$RESULTS_ROOT/results_hypre_cuda
 GPU_HYPRE_CUDA_FILE=f1.dat
 
 ORG_DIR=$PWD

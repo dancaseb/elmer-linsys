@@ -20,6 +20,12 @@ For those too impatient to do a more rigorous study to find the optimal linear s
 
 ![Decision flowchart](https://github.com/ElmerCSC/elmer-linsys/blob/main/pics/decision_flowchart.png?raw=true)
 
+## Updates in 2026
+
+Most of the test results were done on Mahti. Mahti was replaced by Roihu in 2026 and some new measurments were done for Roihu. These include the Navier problem and the EndWindings Magnetostatics problem. Most of the focus was on testing Elmer solvers on GPUs (AMGX and Hypre). Some multi CPU node measurments were also performed.
+
+Note that when using Hypre, be sure to check if the solver actually converged - Elmer can report success but the solver might have hit the maximum iterations cap. This has been fixed for AMGX.
+
 ## License
 
 The contents of this repository are licensed under the Creative Commons Attribution-NonCommercial 4.0 International License. To view a copy of this license, visit <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a> 
