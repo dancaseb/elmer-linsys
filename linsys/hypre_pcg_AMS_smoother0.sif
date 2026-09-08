@@ -1,4 +1,4 @@
-$LinMethod = 99999999 
+$LinMethod = 31700050 
 $LinStr = "Hypre: pcg + ams + smoother 0"
 
 !redo linMethod number

@@ -1,7 +1,7 @@
 # DEFINE PATHS
 
-RAW_RESULTS_PATH=results_2026/roihu/EndWindings-AMGX/results_amgx
-RESULTS_PATH=EndWindings-AMGX
+RAW_RESULTS_PATH=results_2026/roihu/EndWindings-08-17/results_cpu_08_17
+RESULTS_PATH=results_2026/roihu/EndWindings-08-17/results_cpu_08_17
 # RAW_RESULTS_PATH=results_2026/roihu/EndWindings-CPU/results_cpu
 # RESULTS_PATH=EndWindings-CPU
 
@@ -17,13 +17,15 @@ SCRIPT_PATH=python-scripts
 
 #number of partitions used in the gpu run
 PARTITIONS=4
+RESULTS_PATH=results_2026/roihu/EndWindings-08-17/results_cpu_08_17/partitions-$PARTITIONS
+
 FORMAT=png
-MESH_LEVELS=(2 3)
+MESH_LEVELS=(1)
 # Define the name and location where the scalability plot should be saved
 SCALE_NAME=scalability_test
 # SCALE_PATH=$PWD/results/roihu/Navier-AMGX-WinkelStructured-partitions-$PARTITIONS-density-015
 # SCALE_PATH=$ORG_DIR/results_2026/roihu/$RESULTS_PATH/Navier-WinkelStructured-partitions-$PARTITIONS
-SCALE_PATH=$ORG_DIR/results_2026/roihu/$RESULTS_PATH/partitions-$PARTITIONS
+SCALE_PATH=$ORG_DIR/$RESULTS_PATH
 
 # Define the name and location where the timing plots should be saved
 # (these will be incremented with the mesh level)
@@ -73,9 +75,9 @@ echo
 
 cd $SCRIPT_PATH
 # Copy the result files for easier access.
-cp $RET_PATH/$RET_FILE $SCALE_PATH/
-cp $RET_PATH/$RET_FILE.marker $SCALE_PATH/
-cp $RET_PATH/$RET_FILE.names $SCALE_PATH/
+# cp $RET_PATH/$RET_FILE $SCALE_PATH/
+# cp $RET_PATH/$RET_FILE.marker $SCALE_PATH/
+# cp $RET_PATH/$RET_FILE.names $SCALE_PATH/
 
 # # Copy the slurm log files (paths follow the --output/--error patterns above)
 # cp $ORG_DIR/logs/${SLURM_JOB_NAME}_${SLURM_JOB_ID}.out $SCALE_PATH/
@@ -85,48 +87,50 @@ cp $RET_PATH/$RET_FILE.names $SCALE_PATH/
 # "expression 2" column (written by case_gpu.sif). Older result files
 # without that column yield an empty list, and the loop below then just
 # plots without filtering on thread count.
-THREADS_LIST=$(python3 - <<PYEOF
-import pandas as pd
-from tools.tools import read_names
+# THREADS_LIST=$(python3 - <<PYEOF
+# import pandas as pd
+# from tools.tools import read_names
 
-dat_file = "$RET_PATH/$RET_FILE"
-cols = read_names(dat_file)
-matches = [c for c in cols if "expression 2" in c]
-if matches:
-    idx = cols.index(matches[0])
-    data = pd.read_table(dat_file, sep=r"\s+", header=None)
-    print(" ".join(str(int(v)) for v in sorted(data[idx].unique())))
-PYEOF
-)
+# dat_file = "$RET_PATH/$RET_FILE"
+# cols = read_names(dat_file)
+# matches = [c for c in cols if "expression 2" in c]
+# if matches:
+#     idx = cols.index(matches[0])
+#     data = pd.read_table(dat_file, sep=r"\s+", header=None)
+#     print(" ".join(str(int(v)) for v in sorted(data[idx].unique())))
+# PYEOF
+# )
 
-for mesh_level in "${MESH_LEVELS[@]}"; do
+for partitions in "${PARTITIONS[@]}"; do
+    for mesh_level in "${MESH_LEVELS[@]}"; do
 
-    for threads in ${THREADS_LIST:-_all_}; do
+        # for threads in ${THREADS_LIST:-_all_}; do
 
-        echo "-----------------------------------"
+            echo "-----------------------------------"
 
-        if [ "$threads" = "_all_" ]; then
-            echo "Plotting timings with mesh level $mesh_level"
-            th_arg=""
-            save_as=$TIME_PATH/$TIME_NAME-$mesh_level.$FORMAT
-        else
-            echo "Plotting timings with mesh level $mesh_level, $threads threads"
-            th_arg="-th $threads"
-            save_as=$TIME_PATH/$TIME_NAME-$mesh_level-t$threads.$FORMAT
-        fi
-        echo
+            if [ "$threads" = "_all_" ]; then
+                echo "Plotting timings with mesh level $mesh_level"
+                th_arg=""
+                save_as=$TIME_PATH/$TIME_NAME-$mesh_level.$FORMAT
+            else
+                echo "Plotting timings with mesh level $mesh_level, $threads threads"
+                th_arg="-th $threads"
+                save_as=$TIME_PATH/$TIME_NAME-$mesh_level-t$threads.$FORMAT
+            fi
+            echo
 
-        if $VIZ_TOT_TIME; then
-            python3 plot_times.py -p $RET_PATH -f $RET_FILE -s $save_as -t $TOL -m $mesh_level
-        else
-            python3 plot_times.py -p $RET_PATH -f $RET_FILE -s $save_as -t $TOL -m $mesh_level
-        fi
+            if $VIZ_TOT_TIME; then
+                python3 plot_times.py -p $RET_PATH -f $RET_FILE -s $save_as -t $TOL -m $mesh_level
+            else
+                python3 plot_times.py -p $RET_PATH -f $RET_FILE -s $save_as -t $TOL -m $mesh_level
+            fi
 
-        echo "------------------------------------"
-        echo
+            echo "------------------------------------"
+            echo
+
+        # done
 
     done
-
 done
 
 cd $ORG_DIR

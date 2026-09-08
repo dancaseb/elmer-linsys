@@ -9,7 +9,7 @@
 Header
   Mesh DB "." "winkel"
   Include Path ""
-  Results Directory "results_amgx"
+  Results Directory "results_amgx_density_025"
 End 
 
 
@@ -61,10 +61,12 @@ Solver 1
   Solver Timing = True
  
 !  Linear System Symmetric = True
-!  Optimize Bandwidth = False
-!  Linear System Scaling = True
+  Optimize Bandwidth = False
+  Linear System Scaling = True
 
   include linsys.sif
+
+  Linear System Abort Not Converged = True
 End 
 
 Solver 2
@@ -84,7 +86,6 @@ Solver 2
   Operator 5 = cpu time
 
   Expression 1 = Real $ipar(0)
-  Expression 2 = Real $ipar(2)
 
 ! Give a unique tag to each line/method
   Line Marker = Integer $LinMethod$

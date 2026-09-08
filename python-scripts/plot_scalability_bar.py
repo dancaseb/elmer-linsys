@@ -46,7 +46,8 @@ dat_filename = "f.dat"
 # (in this case WinkelStructed/results)
 org_cwd = os.getcwd()
 cwd_arr = os.getcwd().split('/')
-cwd_arr[-1] = "Poisson/WinkelStructured/results"
+# cwd_arr[-1] = "Poisson/WinkelStructured/results"
+cwd_arr[-1] = "Navier/WinkelStructured/results_amgx"
 os.chdir('/'.join(cwd_arr))
 
 #################################################

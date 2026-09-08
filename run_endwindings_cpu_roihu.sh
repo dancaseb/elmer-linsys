@@ -1,6 +1,6 @@
 #!/bin/bash 
-#SBATCH --time=00:15:00
-#SBATCH --job-name=cpu_ew_mesh_1
+#SBATCH --time=00:30:00
+#SBATCH --job-name=cpu_ew_mesh_2
 #SBATCH --output=logs/%x_%j.out
 #SBATCH --error=logs/%x_%j.err
 #SBATCH --partition=medium
@@ -57,7 +57,7 @@ ElmerGrid 2 2 ./mesh -partdual -metiskway $partitions
 
 cd ../..
 
-for mesh_level in 1 2; do
+for mesh_level in 2; do
     for solver in linsys/*.sif; do
 	if grep -Fxq "$solver" solver-lists/$problem-Solvers.txt
 	then

@@ -9,7 +9,7 @@
 Header
   Mesh DB "." "winkel"
   Include Path ""
-  Results Directory "results_cpu"
+  Results Directory "results_cpu_density_015"
 End 
 
 

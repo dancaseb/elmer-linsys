@@ -128,6 +128,12 @@ for mesh_level in "${MESH_LEVELS[@]}"; do
 
 	    cp $solver $CASE_PATH/$LINSYS_FILE
 	    sed "s/include linsys\.sif/include $LINSYS_FILE/" $CASE_PATH/case_cpu.sif > $CASE_PATH/$CASE_FILE
+
+	    # Hypre solves don't raise an ERROR on hitting the iteration cap (Elmer's own
+	    # iterative solvers do, checked below) -- they just report how many iterations
+	    # they took, so we need the configured cap to tell "converged" from "gave up".
+	    max_iters=$(grep -m1 -oP 'Linear System Max Iterations\s*=\s*\K[0-9]+' "$solver" || true)
+
             cd $CASE_PATH
 
             echo
@@ -142,6 +148,29 @@ for mesh_level in "${MESH_LEVELS[@]}"; do
             status=$?
 
             end=$(date +%s)
+
+            # Check this solver's own slice of the job's SLURM stdout log (already being
+            # written by the --output=logs/%x_%j.out redirection) for a convergence failure:
+            # - Elmer's native iterative solvers print an explicit "Too many iterations were
+            #   needed" ERROR (one line per rank) when they hit Linear System Max Iterations.
+            # - Hypre doesn't raise an ERROR at all -- it just reports "Required iterations N"
+            #   -- so N has to be compared against the configured max_iters by hand.
+            # Scoped to the lines since this solver's own "Starting ..." marker so an earlier
+            # solver's failure in the same job log isn't misattributed to this one.
+            job_log=$ORG_DIR/logs/${SLURM_JOB_NAME:-run_complete}_${SLURM_JOB_ID}.out
+            if [ -f "$job_log" ]; then
+                start_line=$(grep -n -F "Starting $solver with mesh level $mesh_level" "$job_log" | tail -1 | cut -d: -f1)
+                if [ -n "$start_line" ]; then
+                    iter_errors=$(tail -n +"$start_line" "$job_log" | grep -c -F "ERROR:: IterSolve: Numerical Error: Too many iterations were needed." || true)
+                    hypre_iters=$(tail -n +"$start_line" "$job_log" | grep -m1 -oP 'SolveHypre: Required iterations \K[0-9]+' || true)
+                    if [ "${iter_errors:-0}" -gt 0 ]; then
+                        echo "CONVERGENCE FAILURE: $solver (mesh level $mesh_level, $PARTITIONS partitions) -- Elmer's iterative solver reported 'Too many iterations were needed' on $iter_errors rank(s)" >&2
+                    fi
+                    if [ -n "$hypre_iters" ] && [ -n "$max_iters" ] && [ "$hypre_iters" -ge "$max_iters" ]; then
+                        echo "CONVERGENCE FAILURE: $solver (mesh level $mesh_level, $PARTITIONS partitions) -- Hypre required $hypre_iters/$max_iters iterations without converging" >&2
+                    fi
+                fi
+            fi
 
    	    echo
 	    if [ $status -ne 0 ]; then

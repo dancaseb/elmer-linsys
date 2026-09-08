@@ -228,7 +228,7 @@ def main():
     ax.set_xscale('log')
     ax.set_yscale('log')
     ax.set_xlabel("Number of partitions")
-    ax.set_ylabel(f"{time_col} (s)")
+    ax.set_ylabel(f"Times (s)")
     ax.grid(True, which='both', alpha=0.3)
 
     all_partitions = sorted(set(pcg_partitions.tolist()) | set(cg_partitions.tolist()))
@@ -238,7 +238,8 @@ def main():
     ax.yaxis.set_major_formatter(ScalarFormatter())
     ax.yaxis.set_minor_formatter(ScalarFormatter())
 
-    ax.set_title(f"{test_case}: CPU vs GPU linsys cpu time (mesh level {mesh_level}, Elements: {elements})")
+    elements_str = f"{elements:,}".replace(",", " ")
+    ax.set_title(f"{test_case}: CPU vs GPU linear system solution time (Elements: {elements_str})")
     ax.legend()
 
     plt.tight_layout()

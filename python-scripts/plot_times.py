@@ -37,11 +37,12 @@ from tools.parser import *
 # Substrings defining the column names with wanted values
 time_col = "linsys cpu time"  # The measured time of interest
 tot_time_col = "value: cpu time"  # Total time
-norm_col = "norm"  # The norm of interest
+norm_col = "magnetic norm"  # The norm of interest, This is for the WhitneyAVSolver, change to "norm" for other test cases
 partition_col = "partitions"  # The number of partitions used
 mesh_level_col = "expression 1"  # The used mesh level
 threads_col = "expression 2"  # The number of OMP threads used (absent in older result files)
 dof_col = "dofs"  # The number of degrees of freedom
+element_col = "elements"  # The number of elements in the mesh
 
 # Predefine this if P-multigrid was used. Ignore otherwise
 p_level_col = "_______"
@@ -60,11 +61,13 @@ cwd_arr = os.getcwd().split('/')
 cwd_arr[-1] = "Navier/WinkelStructured/results_cpu"
 os.chdir('/'.join(cwd_arr))
 
+test_case = "Navier-WinkelStructured"
+
 #################################################
 
 
 def main():
-    global time_col, norm_col, partition_col, mesh_level_col, threads_col, tot_time_col, dof_col, p_level_col
+    global time_col, norm_col, partition_col, mesh_level_col, threads_col, tot_time_col, dof_col, p_level_col, element_col
     global dat_filename, viz_total_time, tolerance
 
     mesh_level = None  # Specifies the mesh level of which results are plotted
@@ -106,6 +109,8 @@ def main():
     partition_col = [s for s in column_names if partition_col in s][0]
     mesh_level_col = [s for s in column_names if mesh_level_col in s][0]
     dof_col = [s for s in column_names if dof_col in s][0]
+    element_col = [s for s in column_names if element_col in s][0]
+
 
     # Older result files don't have a thread-count column
     try:
@@ -140,6 +145,7 @@ def main():
         data = data[data[threads_col] == float(threads)]
 
     dofs = data[dof_col].iloc[0]
+    elements = data[element_col].iloc[0]
 
     solvers = data['Solver'].values
     n_solvers = len(solvers)
@@ -176,7 +182,7 @@ def main():
     ax.set_yticks(y_axis, solvers)
     ax.set_ylabel("Solver")
     ax.set_xlabel("Time (s)")
-    title = f"Runtimes for {'-'.join(os.getcwd().split('/')[-3:-1])} with DOFs: {dofs} ({data[partition_col].iloc[0]} partitions)"
+    title = f"Runtimes for {test_case} with Elements: {elements}, DOFs: {dofs} ({data[partition_col].iloc[0]} partitions)"
     if threads_col is not None:
         title += f", {int(data[threads_col].iloc[0])} threads"
     ax.set_title(title)
