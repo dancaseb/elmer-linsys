@@ -60,26 +60,21 @@ for mesh_level in 2; do
         sed "s/include linsys\.sif/include $LINSYS_FILE/" "$path/$sif_basename" > $path/$CASE_FILE
         sed -i "s/Results Directory \".*\"/Results Directory \"$RESULTS_DIR\"/" $path/$CASE_FILE
 
-	    # Hypre solves don't raise an ERROR on hitting the iteration cap (Elmer's own
-	    # iterative solvers do, checked below) -- they just report how many iterations
-	    # they took, so we need the configured cap to tell "converged" from "gave up".
-	    max_iters=$(grep -m1 -oP 'Linear System Max Iterations\s*=\s*\K[0-9]+' "$solver" || true)
+        cd $path
 
-            cd $path
+        start=$(date +%s)
 
-            start=$(date +%s)
+        echo "-----------------------------------"
+        echo "Starting $solver with mesh level $mesh_level"
 
-            echo "-----------------------------------"
-            echo "Starting $solver with mesh level $mesh_level"
+        srun --cpus-per-task=$threads ElmerSolver $CASE_FILE -ipar 2 $mesh_level $partitions
 
-            srun --cpus-per-task=$threads ElmerSolver $CASE_FILE -ipar 2 $mesh_level $partitions
-
-            end=$(date +%s)
+        end=$(date +%s)
 
 
-            echo "Ending $solver with mesh level $mesh_level"
-            echo "Elapsed time: $(($end-$start)) s"
-            echo "-----------------------------------"
+        echo "Ending $solver with mesh level $mesh_level"
+        echo "Elapsed time: $(($end-$start)) s"
+        echo "-----------------------------------"
 
 	    cd ../..
 

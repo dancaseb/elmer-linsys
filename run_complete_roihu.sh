@@ -3,9 +3,9 @@
 #SBATCH --job-name=run_complete
 #SBATCH --output=logs/%x_%j.out
 #SBATCH --error=logs/%x_%j.err
-#SBATCH --partition=large
+#SBATCH --partition=small
 #SBATCH --account=project_2001659
-#SBATCH --nodes=6
+#SBATCH --nodes=1
 #SBATCH --ntasks-per-node=384
 
 export OMP_NUM_THREADS=1
@@ -57,8 +57,7 @@ TIME_PATH=$SCALE_PATH
 
 echo "Number of partitions: $PARTITIONS"
 # Define the path where resulting .dat files are stored (no need to change)
-# If changed, also change the path in plot_times.py and plot_scalability_bar.py and also the corresponding sif and scale path
-RET_PATH=$PWD/$CASE_PATH/results_amgx_density_015
+RET_PATH=$PWD/$CASE_PATH/results
 
 # Define the resulting .dat file (no need to change)
 RET_FILE=f$PARTITIONS.dat
@@ -80,9 +79,9 @@ VIZ_TOT_TIME=false
 
 ORG_DIR=$PWD
 
-# Job-specific filenames so a concurrently-running job that shares this same
-# case directory (e.g. the AMGX sweep) can't clobber this job's linsys.sif /
-# case file while both are in flight.
+# Job-specific filenames so a concurrently-running jobs that share this same
+# case directory (e.g. running a CPU and AMGX test case) don't cause a race condition
+# in linsys.sif / case.sif / config.json
 JOB_TAG=${SLURM_JOB_ID:-$$}
 LINSYS_FILE=linsys_$JOB_TAG.sif
 CASE_FILE=case_cpu_$JOB_TAG.sif
@@ -96,21 +95,9 @@ trap 'rm -f "$CASE_PATH/$LINSYS_FILE" "$CASE_PATH/$CASE_FILE"' EXIT
 
 cd $CASE_PATH
 
-# Find all folders with files of form mesh.*
-MESH_DIRS=$(find . -type f -name "mesh.*" | sed -r 's|/[^/]+$||' |sort |uniq)
 
-# for mesh_dir in "${MESH_DIRS[@]}"; do
-
-    # Check if proper partitioning already exists
-    # if [ -f "$mesh_dir/partitioning.$PARTITIONS" ]; then
-	# continue
-	
-    # Otherwise call ElmerGrid
-    # else
 ElmerGrid 1 2 winkel.grd -partdual -metiskway $PARTITIONS
-    # fi
 
-# done
 
 cd $ORG_DIR
 
@@ -129,58 +116,30 @@ for mesh_level in "${MESH_LEVELS[@]}"; do
 	    cp $solver $CASE_PATH/$LINSYS_FILE
 	    sed "s/include linsys\.sif/include $LINSYS_FILE/" $CASE_PATH/case_cpu.sif > $CASE_PATH/$CASE_FILE
 
-	    # Hypre solves don't raise an ERROR on hitting the iteration cap (Elmer's own
-	    # iterative solvers do, checked below) -- they just report how many iterations
-	    # they took, so we need the configured cap to tell "converged" from "gave up".
-	    max_iters=$(grep -m1 -oP 'Linear System Max Iterations\s*=\s*\K[0-9]+' "$solver" || true)
 
-            cd $CASE_PATH
+        cd $CASE_PATH
 
-            echo
-            echo
+        echo
+        echo
 	    echo "-----------------------------------"
-            echo "Starting $solver with mesh level $mesh_level"
-            echo
+        echo "Starting $solver with mesh level $mesh_level"
+        echo
 
-            start=$(date +%s)
+        start=$(date +%s)
 
-            srun ElmerSolver $CASE_FILE -ipar 2 $mesh_level $PARTITIONS
-            status=$?
+        srun ElmerSolver $CASE_FILE -ipar 2 $mesh_level $PARTITIONS
+        status=$?
 
-            end=$(date +%s)
+        end=$(date +%s)
 
-            # Check this solver's own slice of the job's SLURM stdout log (already being
-            # written by the --output=logs/%x_%j.out redirection) for a convergence failure:
-            # - Elmer's native iterative solvers print an explicit "Too many iterations were
-            #   needed" ERROR (one line per rank) when they hit Linear System Max Iterations.
-            # - Hypre doesn't raise an ERROR at all -- it just reports "Required iterations N"
-            #   -- so N has to be compared against the configured max_iters by hand.
-            # Scoped to the lines since this solver's own "Starting ..." marker so an earlier
-            # solver's failure in the same job log isn't misattributed to this one.
-            job_log=$ORG_DIR/logs/${SLURM_JOB_NAME:-run_complete}_${SLURM_JOB_ID}.out
-            if [ -f "$job_log" ]; then
-                start_line=$(grep -n -F "Starting $solver with mesh level $mesh_level" "$job_log" | tail -1 | cut -d: -f1)
-                if [ -n "$start_line" ]; then
-                    iter_errors=$(tail -n +"$start_line" "$job_log" | grep -c -F "ERROR:: IterSolve: Numerical Error: Too many iterations were needed." || true)
-                    hypre_iters=$(tail -n +"$start_line" "$job_log" | grep -m1 -oP 'SolveHypre: Required iterations \K[0-9]+' || true)
-                    if [ "${iter_errors:-0}" -gt 0 ]; then
-                        echo "CONVERGENCE FAILURE: $solver (mesh level $mesh_level, $PARTITIONS partitions) -- Elmer's iterative solver reported 'Too many iterations were needed' on $iter_errors rank(s)" >&2
-                    fi
-                    if [ -n "$hypre_iters" ] && [ -n "$max_iters" ] && [ "$hypre_iters" -ge "$max_iters" ]; then
-                        echo "CONVERGENCE FAILURE: $solver (mesh level $mesh_level, $PARTITIONS partitions) -- Hypre required $hypre_iters/$max_iters iterations without converging" >&2
-                    fi
-                fi
-            fi
-
-   	    echo
 	    if [ $status -ne 0 ]; then
 		echo "FAILED $solver with mesh level $mesh_level (srun exit code $status)"
 	    else
 		echo "Ending $solver with mesh level $mesh_level"
 	    fi
-            echo "Elapsed time: $(($end-$start)) s"
-            echo "-----------------------------------"
-            echo
+        echo "Elapsed time: $(($end-$start)) s"
+        echo "-----------------------------------"
+        echo
 
 	    cd $ORG_DIR
 
